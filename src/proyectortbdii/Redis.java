@@ -3,6 +3,8 @@ package proyectortbdii;
 import java.util.HashMap;
 import java.util.Map;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.exceptions.JedisException;
 
 public class Redis {
 /*
@@ -17,13 +19,18 @@ public class Redis {
 - Años de Experiencia
 - Fotografia (tal vez)
     */    
+    private static final String redisHost = "localhost";
+    private static final int redisPort = 6379;
+    Jedis jedis = null;
+    
     public Redis() {
-    }
-
-    public void insertProfesor(Profesor profesor) {
-        Jedis jedis = new Jedis("localhost");
+        jedis = new Jedis(redisHost, redisPort);
         System.out.println("Connection Successful");
-        System.out.println("Server Ping: " + jedis.ping());
+        
+    }
+    
+    public void insertProfesor(Profesor profesor) {
+        //System.out.println("Server Ping: " + jedis.ping());
 
         Map<String, String> userProperties = new HashMap<String, String>();
         userProperties.put("id", profesor.getId());
@@ -35,7 +42,14 @@ public class Redis {
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
         
-        jedis.hmset("profesor:" + profesor.getId(), userProperties);
+        try{
+            jedis.hmset(profesor.getId().toString(), userProperties);
+            System.out.println("ID: "+profesor.getId());
+            
+        } catch (JedisException e) {
+            //if something wrong happen, return it back to the pool
+           System.out.println("Error");
+        } 
 
         jedis.close();
     }
@@ -52,20 +66,9 @@ public class Redis {
         jedis.close();
     }
 
-    public Profesor loadProfesor(String id) {
-        Jedis jedis = new Jedis("localhost");
-        System.out.println("Connection Successful");
-        System.out.println("Server Ping: " + jedis.ping());
-
-        
-        Map<String, String> properties = jedis.hgetAll("profesor:" + id);
-        Profesor profesor = new Profesor();
-        profesor.setId(id);
-        profesor.setTelefono(properties.get("telefono"));
-        //fill all attributes
-        
-        
+    public Map<String, String> loadProfesor(String id) {
+        Map<String, String> properties = jedis.hgetAll(id);
         jedis.close();
-        return profesor;
+        return properties;
     }
 }

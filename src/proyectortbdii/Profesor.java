@@ -26,6 +26,8 @@ public class Profesor {
     public Profesor() {
     }
 
+    
+    
     public Profesor(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String sueldo, String experiencia) {
         this.id = id;
         this.nombre = nombre;

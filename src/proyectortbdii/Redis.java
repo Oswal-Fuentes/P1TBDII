@@ -75,4 +75,51 @@ public class Redis {
     public void deleteProfesor(String id){
         jedis.del(id);
     }
+    
+    public void createAlumno(Alumno alumno) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("id", alumno.getId());
+        userProperties.put("nombre", alumno.getNombre());
+        userProperties.put("apellido", alumno.getApellido());
+        userProperties.put("genero", alumno.getGenero());
+        userProperties.put("fecha_nacimiento", alumno.getFecha_nacimiento());
+        userProperties.put("telefono", alumno.getTelefono());
+        userProperties.put("tipo_licencia", alumno.getTipo_licencia());
+        try{
+            jedis.hmset(alumno.getId().toString(), userProperties);
+        } catch (JedisException e) {
+           System.out.println("Error" + e);
+        } 
+
+        jedis.close();
+    }
+
+    public void updateAlumno(Alumno alumno) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("id", alumno.getId());
+        userProperties.put("nombre", alumno.getNombre());
+        userProperties.put("apellido", alumno.getApellido());
+        userProperties.put("genero", alumno.getGenero());
+        userProperties.put("fecha_nacimiento", alumno.getFecha_nacimiento());
+        userProperties.put("telefono", alumno.getTelefono());
+        userProperties.put("tipo_licencia", alumno.getTipo_licencia());
+        
+        try{
+            jedis.hmset(alumno.getId().toString(), userProperties);
+        } catch (JedisException e) {
+           System.out.println("Error" + e);
+        } 
+        
+        jedis.close();
+    }
+
+    public Map<String, String> readAlumno(String id) {
+        Map<String, String> properties = jedis.hgetAll(id);
+        jedis.close();
+        return properties;
+    }
+    
+    public void deleteAlumno(String id){
+        jedis.del(id);
+    }
 }

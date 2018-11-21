@@ -13,6 +13,8 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -818,26 +820,65 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         if (cb_modulo.getSelectedItem().toString().equals("Profesores")) {
-            System.out.println("Entro en el if");
             Redis r = new Redis();
             ArrayList<Profesor> profes = new ArrayList();
+            ArrayList<Alumno> alumni = new ArrayList();
+            ArrayList<String> keys = new ArrayList();
+            keys = r.getAllKeys();
             try {
-                for (int i = 0; i <= r.getAllKeys().size(); i++) {
-                    System.out.println("Entro al for");
-                    //r.readProfesor(r.getAllKeys().get(1)).keySet()
-                    String id = r.getAllKeys().get(i);
-                    if (r.getTipo(id).equals("Profesor")) {
-                        System.out.println("Entro en el 2do if");
-                        Profesor pro = new Profesor(r.readProfesor(r.getAllKeys().get(i)).get("id"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("nombre"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("apellido"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("genero"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("fecha_nacimiento"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("telefono"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("sueldo"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("xp"));
-                        profes.add(pro);
+                for (int i = 0; i < keys.size(); i++) {
+                    String tipo = r.getTipo(keys.get(i));
+                    if (tipo.equals("Profesor")) {
+                        Map<String, String> datos = new HashMap<String, String>();
+                        datos = r.readObject(keys.get(i));
+                        for (Map.Entry<String, String> entry : datos.entrySet()) {
+                            //System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
+                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", sueldo = "", experiencia = "";
+                            if (entry.getKey().equals("id")) {
+                                id = entry.getValue();
+                            } else if (entry.getKey().equals("nombre")) {
+                                nombre = entry.getValue();
+                            } else if (entry.getKey().equals("apellido")) {
+                                apellido = entry.getValue();
+                            } else if (entry.getKey().equals("genero")) {
+                                genero = entry.getValue();
+                            } else if (entry.getKey().equals("fecha_nacimiento")) {
+                                fecha_nacimiento = entry.getValue();
+                            } else if (entry.getKey().equals("telefono")) {
+                                telefono = entry.getValue();
+                            } else if (entry.getKey().equals("sueldo")) {
+                                sueldo = entry.getValue();
+                            } else if (entry.getKey().equals("experiencia")) {
+                                experiencia = entry.getValue();
+                            }
+                            Profesor pro = new Profesor(id, nombre, apellido, genero, fecha_nacimiento, telefono, sueldo, experiencia);
+                            profes.add(pro);
+                        }
+                    } else if (tipo.equals("Alumno")) {
+                        Map<String, String> datos = new HashMap<String, String>();
+                        datos = r.readObject(keys.get(i));
+                        for (Map.Entry<String, String> entry : datos.entrySet()) {
+                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "";
+                            if (entry.getKey().equals("id")) {
+                                id = entry.getValue();
+                            } else if (entry.getKey().equals("nombre")) {
+                                nombre = entry.getValue();
+                            } else if (entry.getKey().equals("apellido")) {
+                                apellido = entry.getValue();
+                            } else if (entry.getKey().equals("genero")) {
+                                genero = entry.getValue();
+                            } else if (entry.getKey().equals("fecha_nacimiento")) {
+                                fecha_nacimiento = entry.getValue();
+                            } else if (entry.getKey().equals("telefono")) {
+                                telefono = entry.getValue();
+                            } else if (entry.getKey().equals("tipo_licencia")) {
+                                tipo_licencia = entry.getValue();
+                            }
+                            Alumno alu = new Alumno(id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia);
+                            alumni.add(alu);
+                        }
                     }
+
                 }
                 jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
                         new Object[][]{},
@@ -861,7 +902,7 @@ public class Main extends javax.swing.JFrame {
             Redis r = new Redis();
             ArrayList<Alumno> alumnos = new ArrayList();
             try {
-                for (int i = 0; i < r.getAllKeys().size(); i++) {
+                /*for (int i = 0; i < r.getAllKeys().size(); i++) {
                     if (r.readProfesor(r.getAllKeys().get(i)).get("tipo").equals("Alumno")) {
                         Alumno alum = new Alumno(r.readProfesor(r.getAllKeys().get(i)).get("id"),
                                 r.readProfesor(r.getAllKeys().get(i)).get("nombre"),
@@ -872,7 +913,7 @@ public class Main extends javax.swing.JFrame {
                                 r.readProfesor(r.getAllKeys().get(i)).get("tipo_licencia"));
                         alumnos.add(alum);
                     }
-                }
+                }*/
             } catch (JedisException e) {
                 System.out.println(e);
             }

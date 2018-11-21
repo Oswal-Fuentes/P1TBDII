@@ -35,14 +35,8 @@ public class Redis {
         ArrayList<String> keys = new ArrayList();
         for (String str : jedis.keys("*")) {
             keys.add(str);
+            System.out.println("KEYS: "+str);
         }
-        //ArrayList<String> arrayList = new ArrayList<>(Set < String >);
-        //Set<String> keys = jedis.keys("*");
-        //System.out.println("KEYS: " + keys);
-        
-//for (String key : keys) {
-          //  System.out.println(key);
-        //}
         return keys;
     }
 
@@ -76,6 +70,7 @@ public class Redis {
         userProperties.put("telefono", profesor.getTelefono());
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
+        userProperties.put("tipo",profesor.getTipo());
         try {
             jedis.hmset(profesor.getId().toString(), userProperties);
         } catch (JedisException e) {
@@ -85,13 +80,13 @@ public class Redis {
         jedis.close();
     }
 
-    public Map<String, String> readProfesor(String id) {
+    public Map<String, String> readObject(String id) {
         Map<String, String> properties = jedis.hgetAll(id);
         jedis.close();
         return properties;
     }
 
-    public void deleteProfesor(String id) {
+    public void deleteObject(String id) {
         jedis.del(id);
     }
 
@@ -104,6 +99,7 @@ public class Redis {
         userProperties.put("fecha_nacimiento", alumno.getFecha_nacimiento());
         userProperties.put("telefono", alumno.getTelefono());
         userProperties.put("tipo_licencia", alumno.getTipo_licencia());
+        userProperties.put("tipo",alumno.getTipo());
         try {
             jedis.hmset(alumno.getId().toString(), userProperties);
         } catch (JedisException e) {
@@ -122,6 +118,7 @@ public class Redis {
         userProperties.put("fecha_nacimiento", alumno.getFecha_nacimiento());
         userProperties.put("telefono", alumno.getTelefono());
         userProperties.put("tipo_licencia", alumno.getTipo_licencia());
+        userProperties.put("tipo",alumno.getTipo());
 
         try {
             jedis.hmset(alumno.getId().toString(), userProperties);
@@ -130,16 +127,6 @@ public class Redis {
         }
 
         jedis.close();
-    }
-
-    public Map<String, String> readAlumno(String id) {
-        Map<String, String> properties = jedis.hgetAll(id);
-        jedis.close();
-        return properties;
-    }
-
-    public void deleteAlumno(String id) {
-        jedis.del(id);
     }
     
     public String getTipo(String id){

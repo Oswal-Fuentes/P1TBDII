@@ -32,8 +32,8 @@ public class MainTest {
         try {
             for (int i = 1; i <= r.getAllKeys().size(); i++) {
 
-                for (String str : r.readProfesor(r.getAllKeys().get(i)).keySet()) {
-                    System.out.println(str + " = " + r.readProfesor(r.getAllKeys().get(1)).get(str));
+                for (String str : r.readObject(r.getAllKeys().get(i)).keySet()) {
+                    System.out.println(str + " = " + r.readObject(r.getAllKeys().get(1)).get(str));
                 }
             }
         } catch (JedisException e) {

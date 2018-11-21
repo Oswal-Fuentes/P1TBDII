@@ -7,20 +7,21 @@ public class Pago {
     // atributos
     private String idAlumno;
     // Todos estos solo se cobran una vez
-    private double costoMatriculaVL; // costo de matriculación para licencia de vehículo liviano
-    private double costoMatriculaVP; // costo de matriculación para licencia de vehículo pesado
-    private double costoMatriculaVB; // costo de matriculación para licencia de vehículo biciclo
-    private double costoEnsenanzaTeorica; // costo de enseñanza teórica
+    private String costoMatriculaVL; // costo de matriculación para licencia de vehículo liviano
+    private String costoMatriculaVP; // costo de matriculación para licencia de vehículo pesado
+    private String costoMatriculaVB; // costo de matriculación para licencia de vehículo biciclo
+    private String costoEnsenanzaTeorica; // costo de enseñanza teórica
     // Estos se cobran cada vez que se soliciten nuevamente
-    private double costoTramitacionDocs; // costo de tramitación de documentos
-    private double costoEnsenanzaPractica; // costo de enseñanza práctica
+    private String costoTramitacionDocs; // costo de tramitación de documentos
+    private String costoEnsenanzaPractica; // costo de enseñanza práctica
     
     // constructores
     public Pago() {}
-    public Pago(String idAlumno, double costoMatriculaVL,
-            double costoMatriculaVP, double costoMatriculaVB,
-            double costoEnsenanzaTeorica, double costoTramitacionDocs,
-            double costoEnsenanzaPractica) {
+
+    public Pago(String idAlumno, String costoMatriculaVL,
+            String costoMatriculaVP, String costoMatriculaVB,
+            String costoEnsenanzaTeorica, String costoTramitacionDocs,
+            String costoEnsenanzaPractica) {
         this.idAlumno = idAlumno;
         this.costoMatriculaVL = costoMatriculaVL;
         this.costoMatriculaVP = costoMatriculaVP;
@@ -28,51 +29,51 @@ public class Pago {
         this.costoEnsenanzaTeorica = costoEnsenanzaTeorica;
         this.costoTramitacionDocs = costoTramitacionDocs;
         this.costoEnsenanzaPractica = costoEnsenanzaPractica;
-    }
+    }    
     
     // getters & setters
     public String getIdAlumno() {
         return idAlumno;
     }
-    public double getCostoMatriculaVL() {
+    public String getCostoMatriculaVL() {
         return costoMatriculaVL;
     }
-    public double getCostoMatriculaVP() {
+    public String getCostoMatriculaVP() {
         return costoMatriculaVP;
     }
-    public double getCostoMatriculaVB() {
+    public String getCostoMatriculaVB() {
         return costoMatriculaVB;
     }
-    public double getCostoEnsenanzaTeorica() {
+    public String getCostoEnsenanzaTeorica() {
         return costoEnsenanzaTeorica;
     }
-    public double getCostoTramitacionDocs() {
+    public String getCostoTramitacionDocs() {
         return costoTramitacionDocs;
     }
-    public double getCostoEnsenanzaPractica() {
+    public String getCostoEnsenanzaPractica() {
         return costoEnsenanzaPractica;
     }
     public void setIdAlumno(String idAlumno) {
         this.idAlumno = idAlumno;
     }
-    public void setCostoMatriculaVL(double costoMatriculaVL) {
+    public void setCostoMatriculaVL(String costoMatriculaVL) {
         this.costoMatriculaVL = costoMatriculaVL;
     }
-    public void setCostoMatriculaVP(double costoMatriculaVP) {
+    public void setCostoMatriculaVP(String costoMatriculaVP) {
         this.costoMatriculaVP = costoMatriculaVP;
     }
-    public void setCostoMatriculaVB(double costoMatriculaVB) {
+    public void setCostoMatriculaVB(String costoMatriculaVB) {
         this.costoMatriculaVB = costoMatriculaVB;
     }
-    public void setCostoEnsenanzaTeorica(double costoEnsenanzaTeorica) {
+    public void setCostoEnsenanzaTeorica(String costoEnsenanzaTeorica) {
         this.costoEnsenanzaTeorica = costoEnsenanzaTeorica;
     }
-    public void setCostoTramitacionDocs(double costoTramitacionDocs) {
+    public void setCostoTramitacionDocs(String costoTramitacionDocs) {
         this.costoTramitacionDocs = costoTramitacionDocs;
     }
-    public void setCostoEnsenanzaPractica(double costoEnsenanzaPractica) {
+    public void setCostoEnsenanzaPractica(String costoEnsenanzaPractica) {
         this.costoEnsenanzaPractica = costoEnsenanzaPractica;
-    }
+    }    
     
     // métodos
     @Override

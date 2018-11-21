@@ -64,7 +64,59 @@ public class Redis {
 
         jedis.close();
     }
-
+    
+    public void createVehiculo(Vehiculo vehiculo) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("ID", vehiculo.getID());
+        userProperties.put("uso", vehiculo.getUso());
+        userProperties.put("tamano", vehiculo.getTamano());
+        userProperties.put("tarifa", vehiculo.getTarifa());
+        userProperties.put("consumo", vehiculo.getConsumo());
+        userProperties.put("km_recorridos", vehiculo.getKm_recorridos());
+        userProperties.put("tipo_vehiculo", vehiculo.getTipo_Vehiculo());
+        userProperties.put("tipo", vehiculo.getTipo());
+        try {
+            jedis.hmset(vehiculo.getID(), userProperties);
+        } catch (JedisException e) {
+            System.out.println("Error" + e);
+        }
+        jedis.close();
+    }
+    
+    public void createClase(Clase clase) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("ID", clase.getID());
+        userProperties.put("idProfesor", clase.getIdProfesor());
+        userProperties.put("idAlumno", clase.getIdAlumno());
+        userProperties.put("tipo_clase", clase.getTipo_clase());
+        userProperties.put("examenPractico", clase.getExamenPractico());
+        userProperties.put("examenTeorico", clase.getExamenTeorico());
+        userProperties.put("tipo", clase.getTipo());
+        try {
+            jedis.hmset(clase.getID(), userProperties);
+        } catch (JedisException e) {
+            System.out.println("Error" + e);
+        }
+        jedis.close();
+    }
+    
+    public void createPago(Pago pago) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("ID", pago.getID());
+        userProperties.put("idAlumno", pago.getIdAlumno());
+        userProperties.put("costoMatricula", pago.getCostoMatricula());
+        userProperties.put("costoEnsenanzaTeorica", pago.getCostoEnsenanzaTeorica());
+        userProperties.put("costoTramitacionDocs", pago.getCostoTramitacionDocs());
+        userProperties.put("costoEnsenanzaPractica", pago.getCostoEnsenanzaPractica());
+        userProperties.put("tipo", pago.getTipo());
+        try {
+            jedis.hmset(pago.getID(), userProperties);
+        } catch (JedisException e) {
+            System.out.println("Error" + e);
+        }
+        jedis.close();
+    }
+    
     public void updateProfesor(Profesor profesor) {
         Map<String, String> userProperties = new HashMap<String, String>();
         userProperties.put("id", profesor.getId());
@@ -76,14 +128,66 @@ public class Redis {
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
         try {
-            jedis.hmset(profesor.getId().toString(), userProperties);
+            jedis.hmset(profesor.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
 
         jedis.close();
     }
-
+    
+    public void updateVehiculo(Vehiculo vehiculo) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("ID", vehiculo.getID());
+        userProperties.put("uso", vehiculo.getUso());
+        userProperties.put("tamano", vehiculo.getTamano());
+        userProperties.put("tarifa", vehiculo.getTarifa());
+        userProperties.put("consumo", vehiculo.getConsumo());
+        userProperties.put("km_recorridos", vehiculo.getKm_recorridos());
+        userProperties.put("tipo_vehiculo", vehiculo.getTipo_Vehiculo());
+        userProperties.put("tipo", vehiculo.getTipo());
+        try {
+            jedis.hmset(vehiculo.getID(), userProperties);
+        } catch (JedisException e) {
+            System.out.println("Error" + e);
+        }
+        jedis.close();
+    }
+    
+    public void updateClase(Clase clase) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("ID", clase.getID());
+        userProperties.put("idProfesor", clase.getIdProfesor());
+        userProperties.put("idAlumno", clase.getIdAlumno());
+        userProperties.put("tipo_clase", clase.getTipo_clase());
+        userProperties.put("examenPractico", clase.getExamenPractico());
+        userProperties.put("examenTeorico", clase.getExamenTeorico());
+        userProperties.put("tipo", clase.getTipo());
+        try {
+            jedis.hmset(clase.getID(), userProperties);
+        } catch (JedisException e) {
+            System.out.println("Error" + e);
+        }
+        jedis.close();
+    }
+    
+    public void updatePago(Pago pago) {
+        Map<String, String> userProperties = new HashMap<String, String>();
+        userProperties.put("ID", pago.getID());
+        userProperties.put("idAlumno", pago.getIdAlumno());
+        userProperties.put("costoMatricula", pago.getCostoMatricula());
+        userProperties.put("costoEnsenanzaTeorica", pago.getCostoEnsenanzaTeorica());
+        userProperties.put("costoTramitacionDocs", pago.getCostoTramitacionDocs());
+        userProperties.put("costoEnsenanzaPractica", pago.getCostoEnsenanzaPractica());
+        userProperties.put("tipo", pago.getTipo());
+        try {
+            jedis.hmset(pago.getID(), userProperties);
+        } catch (JedisException e) {
+            System.out.println("Error" + e);
+        }
+        jedis.close();
+    }
+    
     public Map<String, String> readProfesor(String id) {
         Map<String, String> properties = jedis.hgetAll(id);
         jedis.close();

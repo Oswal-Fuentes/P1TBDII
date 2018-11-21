@@ -12,7 +12,9 @@ import java.awt.Font;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -92,8 +94,8 @@ public class Main extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         sp_prof_xp = new javax.swing.JSpinner();
         jd_editar_profesor = new javax.swing.JDialog();
-        tf_nombre4 = new javax.swing.JTextField();
-        tf_correo8 = new javax.swing.JTextField();
+        tf_editar_profesor_nombre = new javax.swing.JTextField();
+        tf_editar_profesor_apellido = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
@@ -101,13 +103,13 @@ public class Main extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         jButton28 = new javax.swing.JButton();
         jLabel47 = new javax.swing.JLabel();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jDateChooser5 = new com.toedter.calendar.JDateChooser();
-        tf_correo9 = new javax.swing.JTextField();
-        jSpinner9 = new javax.swing.JSpinner();
+        rb_editar_profesor_male = new javax.swing.JRadioButton();
+        rb_editar_profesor_female = new javax.swing.JRadioButton();
+        jdc_editar_profesor_fecha = new com.toedter.calendar.JDateChooser();
+        tf_editar_profesor_telefono = new javax.swing.JTextField();
+        sp_editar_profesor_sueldo = new javax.swing.JSpinner();
         jLabel48 = new javax.swing.JLabel();
-        jSpinner10 = new javax.swing.JSpinner();
+        sp_editar_profesor_xp = new javax.swing.JSpinner();
         jd_agregar_alumno = new javax.swing.JDialog();
         tf_nombre2 = new javax.swing.JTextField();
         tf_correo4 = new javax.swing.JTextField();
@@ -393,14 +395,19 @@ public class Main extends javax.swing.JFrame {
         jLabel46.setText("Sueldo");
 
         jButton28.setText("Guardar cambios");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
 
         jLabel47.setText("Genero");
 
-        buttonGroup1.add(jRadioButton9);
-        jRadioButton9.setText("Masculino");
+        buttonGroup1.add(rb_editar_profesor_male);
+        rb_editar_profesor_male.setText("Masculino");
 
-        buttonGroup1.add(jRadioButton10);
-        jRadioButton10.setText("Femenino");
+        buttonGroup1.add(rb_editar_profesor_female);
+        rb_editar_profesor_female.setText("Femenino");
 
         jLabel48.setText("Años de Experiencia");
 
@@ -425,16 +432,16 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tf_nombre4, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                        .addComponent(tf_correo8)
+                        .addComponent(tf_editar_profesor_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                        .addComponent(tf_editar_profesor_apellido)
                         .addGroup(jd_editar_profesorLayout.createSequentialGroup()
-                            .addComponent(jRadioButton9)
+                            .addComponent(rb_editar_profesor_male)
                             .addGap(18, 18, 18)
-                            .addComponent(jRadioButton10))
-                        .addComponent(jDateChooser5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_correo9))
-                    .addComponent(jSpinner9, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner10, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rb_editar_profesor_female))
+                        .addComponent(jdc_editar_profesor_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_editar_profesor_telefono))
+                    .addComponent(sp_editar_profesor_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sp_editar_profesor_xp, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60))
         );
         jd_editar_profesorLayout.setVerticalGroup(
@@ -442,32 +449,32 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_editar_profesorLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_nombre4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_editar_profesor_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel43)
-                    .addComponent(tf_correo8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_editar_profesor_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton10))
+                    .addComponent(rb_editar_profesor_male)
+                    .addComponent(rb_editar_profesor_female))
                 .addGap(22, 22, 22)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jdc_editar_profesor_fecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
-                    .addComponent(tf_correo9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_editar_profesor_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel46)
-                    .addComponent(jSpinner9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sp_editar_profesor_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sp_editar_profesor_xp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel48))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -648,6 +655,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
+        jd_modulo.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         jd_modulo.setTitle("Modulo");
 
         jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
@@ -661,11 +669,16 @@ public class Main extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jt_modulo);
 
         jButton3.setText("Eliminar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Modificar");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
 
@@ -677,6 +690,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         cb_modulo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Profesores", "Alumnos" }));
+        cb_modulo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_moduloItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_moduloLayout = new javax.swing.GroupLayout(jd_modulo.getContentPane());
         jd_modulo.getContentPane().setLayout(jd_moduloLayout);
@@ -1047,21 +1065,13 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        jd_editar_profesor.setModal(true);//Bloquear otras ventanas
-        jd_editar_profesor.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
-        jd_editar_profesor.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
-        jd_editar_profesor.setResizable(false);//No se puede modificar el tamaño
-        jd_editar_profesor.setVisible(true);
-    }//GEN-LAST:event_jButton4MouseClicked
-
     private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jButton22MouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (tf_login_username.getText().equals("admin") && tf_login_password.getText().equals("admin")) {
-            JOptionPane.showMessageDialog(this, "Ha ingresado!");
+        if (tf_login_username.getText().equals("") && tf_login_password.getText().equals("")) {
+            //JOptionPane.showMessageDialog(this, "Ha ingresado!");
             jd_login.dispose();
             this.setVisible(true);
         } else {
@@ -1070,6 +1080,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jt_modulo.getModel();
+        model.setRowCount(0);
         jd_modulo.setModal(true);//Bloquear otras ventanas
         jd_modulo.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
         jd_modulo.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
@@ -1107,14 +1119,17 @@ public class Main extends javax.swing.JFrame {
             } else {
                 genero = "Femenino";
             }
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(jdc_prof_nacimiento.getDate());
             Profesor pro = new Profesor(uniqueID, tf_prof_nombre.getText(), tf_prof_apellido.getText(),
-                    genero, jdc_prof_nacimiento.getDate().toString(), tf_prof_telefono.getText(),
+                    genero, date, tf_prof_telefono.getText(),
                     sp_prof_sueldo.getValue().toString(), sp_prof_xp.getValue().toString());
             //Insertar en Redis
             r.createProfesor(pro);
             //Cerrar ventana
             jd_agregar_profesor.dispose();
-            JOptionPane.showMessageDialog(this, "Se agregó el profesor exitosamente. Su ID es: " + uniqueID);
+            JOptionPane.showMessageDialog(this, "Se agregó el profesor exitosamente.\n"
+                    + "Su ID es: " + uniqueID);
             //Limpiar campos
             tf_prof_nombre.setText(null);
             tf_prof_apellido.setText(null);
@@ -1128,10 +1143,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        System.out.println(profes.size());
         if (cb_modulo.getSelectedItem().toString().equals("Profesores")) {
+            profes.clear();
             Redis r = new Redis();
-            ArrayList<Profesor> profes = new ArrayList();
-            ArrayList<Alumno> alumni = new ArrayList();
             ArrayList<String> keys = new ArrayList();
             keys = r.getAllKeys();
             try {
@@ -1140,70 +1155,79 @@ public class Main extends javax.swing.JFrame {
                     if (tipo.equals("Profesor")) {
                         Map<String, String> datos = new HashMap<String, String>();
                         datos = r.readObject(keys.get(i));
+                        Profesor pro = new Profesor();
                         for (Map.Entry<String, String> entry : datos.entrySet()) {
                             //System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
                             String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", sueldo = "", experiencia = "";
                             if (entry.getKey().equals("id")) {
                                 id = entry.getValue();
+                                pro.setId(id);
                             } else if (entry.getKey().equals("nombre")) {
                                 nombre = entry.getValue();
+                                pro.setNombre(nombre);
                             } else if (entry.getKey().equals("apellido")) {
                                 apellido = entry.getValue();
+                                pro.setApellido(apellido);
                             } else if (entry.getKey().equals("genero")) {
                                 genero = entry.getValue();
+                                pro.setGenero(genero);
                             } else if (entry.getKey().equals("fecha_nacimiento")) {
                                 fecha_nacimiento = entry.getValue();
+                                pro.setFecha_nacimiento(fecha_nacimiento);
                             } else if (entry.getKey().equals("telefono")) {
                                 telefono = entry.getValue();
+                                pro.setTelefono(telefono);
                             } else if (entry.getKey().equals("sueldo")) {
                                 sueldo = entry.getValue();
+                                pro.setSueldo(sueldo);
                             } else if (entry.getKey().equals("experiencia")) {
                                 experiencia = entry.getValue();
+                                pro.setExperiencia(experiencia);
                             }
-                            Profesor pro = new Profesor(id, nombre, apellido, genero, fecha_nacimiento, telefono, sueldo, experiencia);
-                            profes.add(pro);
                         }
-                    } else if (tipo.equals("Alumno")) {
-                        Map<String, String> datos = new HashMap<String, String>();
-                        datos = r.readObject(keys.get(i));
-                        for (Map.Entry<String, String> entry : datos.entrySet()) {
-                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "";
-                            if (entry.getKey().equals("id")) {
-                                id = entry.getValue();
-                            } else if (entry.getKey().equals("nombre")) {
-                                nombre = entry.getValue();
-                            } else if (entry.getKey().equals("apellido")) {
-                                apellido = entry.getValue();
-                            } else if (entry.getKey().equals("genero")) {
-                                genero = entry.getValue();
-                            } else if (entry.getKey().equals("fecha_nacimiento")) {
-                                fecha_nacimiento = entry.getValue();
-                            } else if (entry.getKey().equals("telefono")) {
-                                telefono = entry.getValue();
-                            } else if (entry.getKey().equals("tipo_licencia")) {
-                                tipo_licencia = entry.getValue();
+                        profes.add(pro);
+                    } //else if (tipo.equals("Alumno")) {
+//                        Map<String, String> datos = new HashMap<String, String>();
+//                        datos = r.readObject(keys.get(i));
+//                        for (Map.Entry<String, String> entry : datos.entrySet()) {
+//                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "";
+//                            if (entry.getKey().equals("id")) {
+//                                id = entry.getValue();
+//                            } else if (entry.getKey().equals("nombre")) {
+//                                nombre = entry.getValue();
+//                            } else if (entry.getKey().equals("apellido")) {
+//                                apellido = entry.getValue();
+//                            } else if (entry.getKey().equals("genero")) {
+//                                genero = entry.getValue();
+//                            } else if (entry.getKey().equals("fecha_nacimiento")) {
+//                                fecha_nacimiento = entry.getValue();
+//                            } else if (entry.getKey().equals("telefono")) {
+//                                telefono = entry.getValue();
+//                            } else if (entry.getKey().equals("tipo_licencia")) {
+//                                tipo_licencia = entry.getValue();
+//                            }
+//                            Alumno alu = new Alumno(id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia);
+//                            alumni.add(alu);
+//                        }
+//                    }
+//
+//                }
+                    jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{},
+                            new String[]{
+                                "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia"
                             }
-                            Alumno alu = new Alumno(id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia);
-                            alumni.add(alu);
-                        }
+                    ));
+
+                    for (Profesor p : profes) {
+                        Object row[] = {p.getId(), p.getNombre(), p.getApellido(), p.getGenero(), p.getFecha_nacimiento(),
+                            p.getTelefono(), p.getSueldo(), p.getExperiencia()};
+                        DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
+                        m.addRow(row);
+                        jt_modulo.setModel(m);
                     }
 
                 }
-                jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object[][]{},
-                        new String[]{
-                            "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia"
-                        }
-                ));
-
-                for (Profesor p : profes) {
-                    Object row[] = {p.getId(), p.getNombre(), p.getApellido(), p.getGenero(), p.getFecha_nacimiento(),
-                        p.getTelefono(), p.getSueldo(), p.getExperiencia()};
-                    DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
-                    m.addRow(row);
-                    jt_modulo.setModel(m);
-                }
-
             } catch (JedisException e) {
                 System.out.println(e);
             }
@@ -1229,6 +1253,107 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {
+            if (cb_modulo.getSelectedItem().toString().equals("Profesores")) {
+                Profesor pro = profes.get(jt_modulo.getSelectedRow());
+                System.out.println(jt_modulo.getSelectedRow());
+                tf_editar_profesor_nombre.setText(pro.getNombre());
+                tf_editar_profesor_apellido.setText(pro.getApellido());
+                if (pro.getGenero().equals("Masculino")) {
+                    rb_editar_profesor_male.setSelected(true);
+                } else if (pro.getGenero().equals("Femenino")) {
+                    rb_editar_profesor_female.setSelected(true);
+                }
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(pro.getFecha_nacimiento());
+                jdc_editar_profesor_fecha.setDate(date);
+                tf_editar_profesor_telefono.setText(pro.getTelefono());
+                sp_editar_profesor_sueldo.setValue(Integer.parseInt(pro.getSueldo()));
+                sp_editar_profesor_xp.setValue(Integer.parseInt(pro.getExperiencia()));
+                //Abrir dialog
+                jd_editar_profesor.setModal(true);//Bloquear otras ventanas
+                jd_editar_profesor.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+                jd_editar_profesor.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+                jd_editar_profesor.setResizable(false);//No se puede modificar el tamaño
+                jd_editar_profesor.setVisible(true);
+            } else {
+
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void cb_moduloItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_moduloItemStateChanged
+        if (cb_modulo.getSelectedItem().toString().equals("Profesores")) {
+            jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia"
+                    }
+            ));
+            alumni.clear();
+        } else {
+            jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Tipo Licencia"
+                    }
+            ));
+            profes.clear();
+        }
+    }//GEN-LAST:event_cb_moduloItemStateChanged
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            Redis r = new Redis();
+            r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
+            profes.remove(jt_modulo.getSelectedRow());
+            JOptionPane.showMessageDialog(this, "Eliminó el profesor exitosamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al eliminar");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        String id = profes.get(jt_modulo.getSelectedRow()).getId();
+        //Eliminar
+        try {
+            Redis r = new Redis();
+            r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
+            profes.remove(jt_modulo.getSelectedRow());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+        }
+        //Volver a agregar pero con valores nuevos
+        try {
+            Redis r = new Redis();
+            String genero = "";
+            if (rb_editar_profesor_male.isSelected()) {
+                genero = "Masculino";
+            } else {
+                genero = "Femenino";
+            }
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(jdc_editar_profesor_fecha.getDate());
+            Profesor pro = new Profesor(id, tf_editar_profesor_nombre.getText(), tf_editar_profesor_apellido.getText(),
+                    genero, date, tf_editar_profesor_telefono.getText(),
+                    sp_editar_profesor_sueldo.getValue().toString(), sp_editar_profesor_xp.getValue().toString());
+            //Insertar en Redis
+            r.createProfesor(pro);
+            //Cerrar ventana
+            jd_editar_profesor.dispose();
+            JOptionPane.showMessageDialog(this, "Se actualizó el profesor exitosamente. \n"
+                    + "Su ID es: " + id);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+        }
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     private void MI_agregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarVehiculoActionPerformed
         JD_agregarVehiculo.setModal(true);
         JD_agregarVehiculo.pack();
@@ -1420,7 +1545,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private com.toedter.calendar.JDateChooser jDateChooser4;
-    private com.toedter.calendar.JDateChooser jDateChooser5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1457,43 +1581,46 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JSpinner jSpinner10;
-    private javax.swing.JSpinner jSpinner9;
     private javax.swing.JDialog jd_agregar_alumno;
     private javax.swing.JDialog jd_agregar_profesor;
     private javax.swing.JDialog jd_editar_alumno;
     private javax.swing.JDialog jd_editar_profesor;
     private javax.swing.JDialog jd_login;
     private javax.swing.JDialog jd_modulo;
+    private com.toedter.calendar.JDateChooser jdc_editar_profesor_fecha;
     private com.toedter.calendar.JDateChooser jdc_prof_nacimiento;
     private javax.swing.JPanel jp_principal;
     private javax.swing.JTable jt_modulo;
     private javax.swing.JLabel lb_foto;
+    private javax.swing.JRadioButton rb_editar_profesor_female;
+    private javax.swing.JRadioButton rb_editar_profesor_male;
     private javax.swing.JRadioButton rb_prof_female;
     private javax.swing.JRadioButton rb_prof_male;
+    private javax.swing.JSpinner sp_editar_profesor_sueldo;
+    private javax.swing.JSpinner sp_editar_profesor_xp;
     private javax.swing.JSpinner sp_prof_sueldo;
     private javax.swing.JSpinner sp_prof_xp;
     private javax.swing.JTextField tf_correo4;
     private javax.swing.JTextField tf_correo5;
     private javax.swing.JTextField tf_correo6;
     private javax.swing.JTextField tf_correo7;
-    private javax.swing.JTextField tf_correo8;
-    private javax.swing.JTextField tf_correo9;
+    private javax.swing.JTextField tf_editar_profesor_apellido;
+    private javax.swing.JTextField tf_editar_profesor_nombre;
+    private javax.swing.JTextField tf_editar_profesor_telefono;
     private javax.swing.JPasswordField tf_login_password;
     private javax.swing.JTextField tf_login_username;
     private javax.swing.JTextField tf_nombre2;
     private javax.swing.JTextField tf_nombre3;
-    private javax.swing.JTextField tf_nombre4;
     private javax.swing.JTextField tf_prof_apellido;
     private javax.swing.JTextField tf_prof_nombre;
     private javax.swing.JTextField tf_prof_telefono;
     // End of variables declaration//GEN-END:variables
 //int Height = 0, Width = 0;
+    ArrayList<Profesor> profes = new ArrayList();
+    ArrayList<Alumno> alumni = new ArrayList();
 }

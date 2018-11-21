@@ -1173,7 +1173,7 @@ public class Main extends javax.swing.JFrame {
         try {
             Redis R = new Redis();
             String uniqueID = UUID.randomUUID().toString();
-            Clase C = new Clase(uniqueID, TF_idProfesor.getText(),
+            Clase_Practica C = new Clase_Practica(uniqueID, TF_idProfesor.getText(),
                     TF_idAlumno.getText(), CB_agregarClase_tipoClase.getItemAt(CB_agregarClase_tipoClase.getSelectedIndex()),
                     TF_examenPractico.getText(), TF_examenTeorico.getText());
             R.createClase(C);

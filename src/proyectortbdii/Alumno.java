@@ -10,11 +10,13 @@ package proyectortbdii;
  * @author daniela
  */
 public class Alumno {
-    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia;
-    
-    public Alumno(){}
 
-    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia) {
+    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, profesor_asignado, tipo;
+
+    public Alumno() {
+    }
+
+    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String profesor_asignado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -22,12 +24,30 @@ public class Alumno {
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.tipo_licencia = tipo_licencia;
+        this.profesor_asignado = profesor_asignado;
+        this.tipo = "Alumno";
     }
-    
-    public void setId(String id){
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getProfesor_asignado() {
+        return profesor_asignado;
+    }
+
+    public void setProfesor_asignado(String profesor_asignado) {
+        this.profesor_asignado = profesor_asignado;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -51,11 +71,11 @@ public class Alumno {
     public void setTipo_licencia(String tipo_licencia) {
         this.tipo_licencia = tipo_licencia;
     }
-    
-    public String getId(){
+
+    public String getId() {
         return id;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -79,7 +99,4 @@ public class Alumno {
     public String getTipo_licencia() {
         return tipo_licencia;
     }
-    
-
-    
 }

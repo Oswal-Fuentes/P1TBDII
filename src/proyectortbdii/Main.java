@@ -147,11 +147,55 @@ public class Main extends javax.swing.JFrame {
         cb_modulo = new javax.swing.JComboBox<>();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        JD_agregarVehiculo = new javax.swing.JDialog();
+        L_vehiculo = new javax.swing.JLabel();
+        L_uso = new javax.swing.JLabel();
+        TF_uso = new javax.swing.JTextField();
+        L_tamano = new javax.swing.JLabel();
+        TF_tamano = new javax.swing.JTextField();
+        L_tarifa = new javax.swing.JLabel();
+        TF_tarifa = new javax.swing.JTextField();
+        L_consumo = new javax.swing.JLabel();
+        TF_consumo = new javax.swing.JTextField();
+        L_kmRecorridos = new javax.swing.JLabel();
+        TF_kmRecorridos = new javax.swing.JTextField();
+        L_tipoVehiculo = new javax.swing.JLabel();
+        CB_tipoVehiculo = new javax.swing.JComboBox<>();
+        B_agregarVehiculo = new javax.swing.JButton();
+        JD_agregarClase = new javax.swing.JDialog();
+        L_clase = new javax.swing.JLabel();
+        L_idProfesor = new javax.swing.JLabel();
+        TF_idProfesor = new javax.swing.JTextField();
+        L_idAlumno = new javax.swing.JLabel();
+        TF_idAlumno = new javax.swing.JTextField();
+        L_agregarClase_tipoClase = new javax.swing.JLabel();
+        CB_agregarClase_tipoClase = new javax.swing.JComboBox<>();
+        L_examenPractico = new javax.swing.JLabel();
+        TF_examenPractico = new javax.swing.JTextField();
+        L_examenTeorico = new javax.swing.JLabel();
+        TF_examenTeorico = new javax.swing.JTextField();
+        B_agregarClase = new javax.swing.JButton();
+        JD_agregarPago = new javax.swing.JDialog();
+        L_pago = new javax.swing.JLabel();
+        L_agregarPago_idAlumno = new javax.swing.JLabel();
+        TF_agregarPago_idAlumno = new javax.swing.JTextField();
+        L_costoMatricula = new javax.swing.JLabel();
+        TF_costoMatricula = new javax.swing.JTextField();
+        L_costoEnsenanzaTeorica = new javax.swing.JLabel();
+        TF_costoEnsenanzaTeorica = new javax.swing.JTextField();
+        L_costoTramitacionDocs = new javax.swing.JLabel();
+        TF_costoTramitacionDocs = new javax.swing.JTextField();
+        L_costoEnsenanzaPractica = new javax.swing.JLabel();
+        TF_costoEnsenanzaPractica = new javax.swing.JTextField();
+        B_agregarPago = new javax.swing.JButton();
         jp_principal = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        MI_agregarVehiculo = new javax.swing.JMenuItem();
+        MI_agregarClase = new javax.swing.JMenuItem();
+        MI_agregarPago = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -668,6 +712,247 @@ public class Main extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
+        L_vehiculo.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        L_vehiculo.setText("Vehículo");
+
+        L_uso.setText("Uso");
+
+        L_tamano.setText("Tamaño");
+
+        L_tarifa.setText("Tarifa");
+
+        L_consumo.setText("Consumo");
+
+        L_kmRecorridos.setText("Kilómetros Recorridos");
+
+        L_tipoVehiculo.setText("Tipo de Vehículo");
+
+        CB_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviano", "Pesado" }));
+
+        B_agregarVehiculo.setText("Agregar");
+        B_agregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_agregarVehiculoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_agregarVehiculoLayout = new javax.swing.GroupLayout(JD_agregarVehiculo.getContentPane());
+        JD_agregarVehiculo.getContentPane().setLayout(JD_agregarVehiculoLayout);
+        JD_agregarVehiculoLayout.setHorizontalGroup(
+            JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_agregarVehiculoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_vehiculo)
+                    .addGroup(JD_agregarVehiculoLayout.createSequentialGroup()
+                        .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(L_uso)
+                            .addComponent(L_tamano)
+                            .addComponent(L_tarifa)
+                            .addComponent(L_consumo)
+                            .addComponent(L_kmRecorridos)
+                            .addComponent(L_tipoVehiculo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_consumo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_uso, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(CB_tipoVehiculo, javax.swing.GroupLayout.Alignment.LEADING, 0, 150, Short.MAX_VALUE)
+                                .addComponent(TF_kmRecorridos, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addComponent(B_agregarVehiculo))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        JD_agregarVehiculoLayout.setVerticalGroup(
+            JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_agregarVehiculoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(L_vehiculo)
+                .addGap(23, 23, 23)
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_uso)
+                    .addComponent(TF_uso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_tamano)
+                    .addComponent(TF_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_tarifa)
+                    .addComponent(TF_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_consumo)
+                    .addComponent(TF_consumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_kmRecorridos)
+                    .addComponent(TF_kmRecorridos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_tipoVehiculo)
+                    .addComponent(CB_tipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(B_agregarVehiculo)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        L_clase.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        L_clase.setText("Clase");
+
+        L_idProfesor.setText("ID Profesor");
+
+        L_idAlumno.setText("ID Alumno");
+
+        L_agregarClase_tipoClase.setText("Tipo de Clase");
+
+        CB_agregarClase_tipoClase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Práctica", "Teórica" }));
+
+        L_examenPractico.setText("Examen Práctico");
+
+        L_examenTeorico.setText("Examen Teórico");
+
+        B_agregarClase.setText("Agregar");
+        B_agregarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_agregarClaseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_agregarClaseLayout = new javax.swing.GroupLayout(JD_agregarClase.getContentPane());
+        JD_agregarClase.getContentPane().setLayout(JD_agregarClaseLayout);
+        JD_agregarClaseLayout.setHorizontalGroup(
+            JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_agregarClaseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_clase)
+                    .addGroup(JD_agregarClaseLayout.createSequentialGroup()
+                        .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(L_examenTeorico)
+                            .addComponent(L_examenPractico)
+                            .addComponent(L_agregarClase_tipoClase)
+                            .addComponent(L_idAlumno)
+                            .addComponent(L_idProfesor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CB_agregarClase_tipoClase, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JD_agregarClaseLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TF_examenPractico, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TF_examenTeorico, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(B_agregarClase))
+                .addContainerGap(135, Short.MAX_VALUE))
+        );
+        JD_agregarClaseLayout.setVerticalGroup(
+            JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_agregarClaseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(L_clase)
+                .addGap(18, 18, 18)
+                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_idProfesor)
+                    .addComponent(TF_idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_idAlumno)
+                    .addComponent(TF_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_agregarClase_tipoClase)
+                    .addComponent(CB_agregarClase_tipoClase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_examenPractico)
+                    .addComponent(TF_examenPractico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarClaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_examenTeorico)
+                    .addComponent(TF_examenTeorico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(B_agregarClase)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        L_pago.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        L_pago.setText("Pago");
+
+        L_agregarPago_idAlumno.setText("ID Alumno");
+
+        L_costoMatricula.setText("Costo de Matrícula");
+
+        L_costoEnsenanzaTeorica.setText("Costo de Enseñanza Teórica");
+
+        L_costoTramitacionDocs.setText("Costo de Tramitación de Documentos");
+
+        L_costoEnsenanzaPractica.setText("Costo Enseñanza Práctica");
+
+        B_agregarPago.setText("Agregar");
+        B_agregarPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_agregarPagoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_agregarPagoLayout = new javax.swing.GroupLayout(JD_agregarPago.getContentPane());
+        JD_agregarPago.getContentPane().setLayout(JD_agregarPagoLayout);
+        JD_agregarPagoLayout.setHorizontalGroup(
+            JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_agregarPagoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_pago)
+                    .addGroup(JD_agregarPagoLayout.createSequentialGroup()
+                        .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(L_agregarPago_idAlumno)
+                            .addComponent(L_costoMatricula)
+                            .addComponent(L_costoEnsenanzaTeorica)
+                            .addComponent(L_costoTramitacionDocs)
+                            .addComponent(L_costoEnsenanzaPractica))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_agregarPago_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_costoMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_costoEnsenanzaTeorica, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_costoTramitacionDocs, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_costoEnsenanzaPractica, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(B_agregarPago))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        JD_agregarPagoLayout.setVerticalGroup(
+            JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_agregarPagoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(L_pago)
+                .addGap(18, 18, 18)
+                .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_agregarPago_idAlumno)
+                    .addComponent(TF_agregarPago_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_costoMatricula)
+                    .addComponent(TF_costoMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_costoEnsenanzaTeorica)
+                    .addComponent(TF_costoEnsenanzaTeorica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_costoTramitacionDocs)
+                    .addComponent(TF_costoTramitacionDocs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_agregarPagoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_costoEnsenanzaPractica)
+                    .addComponent(TF_costoEnsenanzaPractica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(B_agregarPago)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autoescuela");
 
@@ -699,6 +984,30 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem5);
+
+        MI_agregarVehiculo.setText("Agregar Vehículo");
+        MI_agregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_agregarVehiculoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MI_agregarVehiculo);
+
+        MI_agregarClase.setText("Agregar Clase");
+        MI_agregarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_agregarClaseActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MI_agregarClase);
+
+        MI_agregarPago.setText("Agregar Pago");
+        MI_agregarPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_agregarPagoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MI_agregarPago);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Modulo");
@@ -920,9 +1229,95 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void MI_agregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarVehiculoActionPerformed
+        JD_agregarVehiculo.setModal(true);
+        JD_agregarVehiculo.pack();
+        JD_agregarVehiculo.setLocationRelativeTo(this);
+        JD_agregarVehiculo.setResizable(false);
+        JD_agregarVehiculo.setVisible(true);
+    }//GEN-LAST:event_MI_agregarVehiculoActionPerformed
+
+    private void MI_agregarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarClaseActionPerformed
+        JD_agregarClase.setModal(true);
+        JD_agregarClase.pack();
+        JD_agregarClase.setLocationRelativeTo(this);
+        JD_agregarClase.setResizable(false);
+        JD_agregarClase.setVisible(true);
+    }//GEN-LAST:event_MI_agregarClaseActionPerformed
+
+    private void MI_agregarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarPagoActionPerformed
+        JD_agregarPago.setModal(true);
+        JD_agregarPago.pack();
+        JD_agregarPago.setLocationRelativeTo(this);
+        JD_agregarPago.setResizable(false);
+        JD_agregarPago.setVisible(true);
+    }//GEN-LAST:event_MI_agregarPagoActionPerformed
+
+    private void B_agregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_agregarVehiculoActionPerformed
+        try {
+            Redis R = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            Vehiculo V = new Vehiculo(uniqueID, TF_uso.getText(),
+                    TF_tamano.getText(), TF_tarifa.getText(),
+                    TF_consumo.getText(), TF_kmRecorridos.getText(),
+                    CB_tipoVehiculo.getItemAt(CB_tipoVehiculo.getSelectedIndex()));
+            R.createVehiculo(V);
+            JOptionPane.showMessageDialog(JD_agregarVehiculo,
+                    "El Vehículo (" + uniqueID + ") se agregó correctamente.");
+            JD_agregarVehiculo.dispose();
+            TF_uso.setText(null);
+            TF_tamano.setText(null);
+            TF_tarifa.setText(null);
+            TF_consumo.setText(null);
+            TF_kmRecorridos.setText(null);
+            CB_tipoVehiculo.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(JD_agregarVehiculo, "El Vehículo no se pudo agregar correctamente.");
+        }
+    }//GEN-LAST:event_B_agregarVehiculoActionPerformed
+
+    private void B_agregarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_agregarClaseActionPerformed
+        try {
+            Redis R = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            Clase_Practica C = new Clase_Practica(uniqueID, TF_idProfesor.getText(),
+                    TF_idAlumno.getText(), CB_agregarClase_tipoClase.getItemAt(CB_agregarClase_tipoClase.getSelectedIndex()),
+                    TF_examenPractico.getText(), TF_examenTeorico.getText());
+            R.createClase(C);
+            JOptionPane.showMessageDialog(JD_agregarVehiculo,
+                    "La Clase (" + uniqueID + ") se agregó correctamente.");
+            JD_agregarClase.dispose();
+            TF_idProfesor.setText(null);
+            TF_idAlumno.setText(null);
+            CB_agregarClase_tipoClase.setSelectedIndex(0);
+            TF_examenPractico.setText(null);
+            TF_examenTeorico.setText(null);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(JD_agregarClase, "La Clase no se pudo agregar correctamente.");
+        }
+    }//GEN-LAST:event_B_agregarClaseActionPerformed
+
+    private void B_agregarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_agregarPagoActionPerformed
+        try {
+            Redis R = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            Pago P = new Pago(uniqueID, TF_agregarPago_idAlumno.getText(),
+                    TF_costoMatricula.getText(), TF_costoEnsenanzaTeorica.getText(),
+                    TF_costoTramitacionDocs.getText(), TF_costoEnsenanzaPractica.getText());
+            R.createPago(P);
+            JOptionPane.showMessageDialog(JD_agregarPago,
+                    "El Pago (" + uniqueID + ") se agregó correctamente.");
+            JD_agregarPago.dispose();
+            TF_agregarPago_idAlumno.setText(null);
+            TF_costoMatricula.setText(null);
+            TF_costoEnsenanzaTeorica.setText(null);
+            TF_costoTramitacionDocs.setText(null);
+            TF_costoEnsenanzaPractica.setText(null);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(JD_agregarClase, "El Pago no se pudo agregar correctamente.");
+        }
+    }//GEN-LAST:event_B_agregarPagoActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -964,6 +1359,50 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_agregarClase;
+    private javax.swing.JButton B_agregarPago;
+    private javax.swing.JButton B_agregarVehiculo;
+    private javax.swing.JComboBox<String> CB_agregarClase_tipoClase;
+    private javax.swing.JComboBox<String> CB_tipoVehiculo;
+    private javax.swing.JDialog JD_agregarClase;
+    private javax.swing.JDialog JD_agregarPago;
+    private javax.swing.JDialog JD_agregarVehiculo;
+    private javax.swing.JLabel L_agregarClase_tipoClase;
+    private javax.swing.JLabel L_agregarPago_idAlumno;
+    private javax.swing.JLabel L_clase;
+    private javax.swing.JLabel L_consumo;
+    private javax.swing.JLabel L_costoEnsenanzaPractica;
+    private javax.swing.JLabel L_costoEnsenanzaTeorica;
+    private javax.swing.JLabel L_costoMatricula;
+    private javax.swing.JLabel L_costoTramitacionDocs;
+    private javax.swing.JLabel L_examenPractico;
+    private javax.swing.JLabel L_examenTeorico;
+    private javax.swing.JLabel L_idAlumno;
+    private javax.swing.JLabel L_idProfesor;
+    private javax.swing.JLabel L_kmRecorridos;
+    private javax.swing.JLabel L_pago;
+    private javax.swing.JLabel L_tamano;
+    private javax.swing.JLabel L_tarifa;
+    private javax.swing.JLabel L_tipoVehiculo;
+    private javax.swing.JLabel L_uso;
+    private javax.swing.JLabel L_vehiculo;
+    private javax.swing.JMenuItem MI_agregarClase;
+    private javax.swing.JMenuItem MI_agregarPago;
+    private javax.swing.JMenuItem MI_agregarVehiculo;
+    private javax.swing.JTextField TF_agregarPago_idAlumno;
+    private javax.swing.JTextField TF_consumo;
+    private javax.swing.JTextField TF_costoEnsenanzaPractica;
+    private javax.swing.JTextField TF_costoEnsenanzaTeorica;
+    private javax.swing.JTextField TF_costoMatricula;
+    private javax.swing.JTextField TF_costoTramitacionDocs;
+    private javax.swing.JTextField TF_examenPractico;
+    private javax.swing.JTextField TF_examenTeorico;
+    private javax.swing.JTextField TF_idAlumno;
+    private javax.swing.JTextField TF_idProfesor;
+    private javax.swing.JTextField TF_kmRecorridos;
+    private javax.swing.JTextField TF_tamano;
+    private javax.swing.JTextField TF_tarifa;
+    private javax.swing.JTextField TF_uso;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cb_modulo;

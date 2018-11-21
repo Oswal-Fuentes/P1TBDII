@@ -899,6 +899,418 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
     </Component>
+    <Container class="javax.swing.JDialog" name="JD_agregarVehiculo">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="L_vehiculo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="L_uso" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_tamano" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_tarifa" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_consumo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_kmRecorridos" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_tipoVehiculo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TF_consumo" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TF_tarifa" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TF_tamano" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TF_uso" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="CB_tipoVehiculo" alignment="0" pref="150" max="32767" attributes="0"/>
+                                  <Component id="TF_kmRecorridos" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Component id="B_agregarVehiculo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="L_vehiculo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_uso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_uso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_tamano" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_tamano" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_tarifa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_tarifa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_consumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_consumo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_kmRecorridos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_kmRecorridos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_tipoVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CB_tipoVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="B_agregarVehiculo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="10" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="L_vehiculo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Veh&#xed;culo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_uso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Uso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_uso">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_tamano">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tama&#xf1;o"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_tamano">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_tarifa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tarifa"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_tarifa">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_consumo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Consumo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_consumo">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_kmRecorridos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kil&#xf3;metros Recorridos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_kmRecorridos">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_tipoVehiculo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de Veh&#xed;culo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CB_tipoVehiculo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Liviano"/>
+                <StringItem index="1" value="Pesado"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="B_agregarVehiculo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agregar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_agregarVehiculoActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="JD_agregarClase">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="L_clase" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="L_examenTeorico" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_examenPractico" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_agregarClase_tipoClase" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_idAlumno" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_idProfesor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TF_idProfesor" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TF_idAlumno" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="CB_agregarClase_tipoClase" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="TF_examenPractico" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="TF_examenTeorico" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Component id="B_agregarClase" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="135" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="L_clase" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_idProfesor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_idProfesor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_idAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_idAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_agregarClase_tipoClase" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CB_agregarClase_tipoClase" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_examenPractico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_examenPractico" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_examenTeorico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_examenTeorico" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="B_agregarClase" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="L_clase">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Clase"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_idProfesor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID Profesor"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_idProfesor">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_idAlumno">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID Alumno"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_idAlumno">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_agregarClase_tipoClase">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de Clase"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CB_agregarClase_tipoClase">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Pr&#xe1;ctica"/>
+                <StringItem index="1" value="Te&#xf3;rica"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_examenPractico">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examen Pr&#xe1;ctico"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_examenPractico">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_examenTeorico">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examen Te&#xf3;rico"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_examenTeorico">
+        </Component>
+        <Component class="javax.swing.JButton" name="B_agregarClase">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agregar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_agregarClaseActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="JD_agregarPago">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="L_pago" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="L_agregarPago_idAlumno" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_costoMatricula" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_costoEnsenanzaTeorica" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_costoTramitacionDocs" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_costoEnsenanzaPractica" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TF_agregarPago_idAlumno" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="TF_costoMatricula" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="TF_costoEnsenanzaTeorica" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="TF_costoTramitacionDocs" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="TF_costoEnsenanzaPractica" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="B_agregarPago" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="L_pago" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_agregarPago_idAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_agregarPago_idAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_costoMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_costoMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_costoEnsenanzaTeorica" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_costoEnsenanzaTeorica" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_costoTramitacionDocs" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_costoTramitacionDocs" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="L_costoEnsenanzaPractica" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TF_costoEnsenanzaPractica" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="B_agregarPago" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="L_pago">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Pago"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_agregarPago_idAlumno">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID Alumno"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_agregarPago_idAlumno">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_costoMatricula">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Costo de Matr&#xed;cula"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_costoMatricula">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_costoEnsenanzaTeorica">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Costo de Ense&#xf1;anza Te&#xf3;rica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_costoEnsenanzaTeorica">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_costoTramitacionDocs">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Costo de Tramitaci&#xf3;n de Documentos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_costoTramitacionDocs">
+        </Component>
+        <Component class="javax.swing.JLabel" name="L_costoEnsenanzaPractica">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Costo Ense&#xf1;anza Pr&#xe1;ctica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TF_costoEnsenanzaPractica">
+        </Component>
+        <Component class="javax.swing.JButton" name="B_agregarPago">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agregar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_agregarPagoActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -920,6 +1332,30 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MI_agregarVehiculo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Veh&#xed;culo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MI_agregarVehiculoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MI_agregarClase">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Clase"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MI_agregarClaseActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MI_agregarPago">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Pago"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MI_agregarPagoActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">

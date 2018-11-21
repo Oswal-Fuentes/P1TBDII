@@ -30,6 +30,7 @@ public class Profesor {
     }
 
     public Profesor(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String sueldo, String experiencia, String categoria, String vehiculo_asignado) {
+
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -134,5 +135,4 @@ public class Profesor {
     public void toString(String experiencia) {
         this.experiencia = experiencia;
     }
-
 }

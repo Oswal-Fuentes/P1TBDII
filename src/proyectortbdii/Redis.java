@@ -22,6 +22,7 @@ public class Redis {
         ArrayList<String> keys = new ArrayList();
         for (String str : jedis.keys("*")) {
             keys.add(str);
+            System.out.println("KEYS: " + str);
         }
         return keys;
     }
@@ -48,11 +49,11 @@ public class Redis {
         }
         return "";
     }
-    
-    public void setVehiculoAsignado(String id_vehiculo ,String id_profesor){
+
+    public void setVehiculoAsignado(String id_vehiculo, String id_profesor) {
         jedis.hset(id_vehiculo, "profesor_asignado", id_profesor);
     }
-    
+
     //categoria = tipo de licencia se usa en Alumno
     public String getIdProfesorCategoria(String tipo_licencia) {
         ArrayList<String> keys = new ArrayList();
@@ -66,7 +67,6 @@ public class Redis {
         }
         return "";
     }
-    
 
     public void createProfesor(Profesor profesor) {
         Map<String, String> userProperties = new HashMap<String, String>();
@@ -81,6 +81,7 @@ public class Redis {
         userProperties.put("categoria", profesor.getExperiencia());
         userProperties.put("vehiculo_asignado", profesor.getVehiculo_asignado());
         userProperties.put("tipo", profesor.getTipo());
+
         try {
             jedis.hmset(profesor.getId().toString(), userProperties);
         } catch (JedisException e) {
@@ -210,6 +211,7 @@ public class Redis {
         userProperties.put("categoria", profesor.getExperiencia());
         userProperties.put("vehiculo_asignado", profesor.getVehiculo_asignado());
         userProperties.put("tipo", profesor.getTipo());
+
         try {
             jedis.hmset(profesor.getId(), userProperties);
         } catch (JedisException e) {
@@ -256,6 +258,7 @@ public class Redis {
 
     public void updateClaseTeorica(Clase_Teorica clase) {
         Map<String, String> userProperties = new HashMap<String, String>();
+
         userProperties.put("id", clase.getID());
         userProperties.put("profesor_asignado", clase.getProfesor_asignado());
         for (String str : clase.getAlumno_asignado()) {

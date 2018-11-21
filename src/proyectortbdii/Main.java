@@ -794,7 +794,7 @@ public class Main extends javax.swing.JFrame {
             //Insertar en Redis
             r.createProfesor(pro);
             //Cerrar ventana
-            //jd_agregar_profesor.dispose();
+            jd_agregar_profesor.dispose();
             JOptionPane.showMessageDialog(this, "Se agregó el profesor exitosamente. Su ID es: "+uniqueID);
             //Limpiar campos
             tf_prof_nombre.setText(null);
@@ -809,8 +809,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        ArrayList keys = new ArrayList();
-        Jedis 
+        ArrayList<String> keys = new ArrayList();
+        //Jedis 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

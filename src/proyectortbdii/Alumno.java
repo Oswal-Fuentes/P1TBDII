@@ -10,7 +10,7 @@ package proyectortbdii;
  * @author daniela
  */
 public class Alumno {
-    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia;
+    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, tipo;
     
     public Alumno(){}
 
@@ -22,6 +22,17 @@ public class Alumno {
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.tipo_licencia = tipo_licencia;
+    }
+    
+    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String tipo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.genero = genero;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.telefono = telefono;
+        this.tipo_licencia = tipo_licencia;
+        this.tipo = tipo;
     }
     
     public void setId(String id){

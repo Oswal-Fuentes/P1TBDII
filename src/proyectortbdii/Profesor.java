@@ -22,12 +22,11 @@ public class Profesor {
     private String telefono;
     private String sueldo;
     private String experiencia;
+    private String tipo;
 
     public Profesor() {
     }
 
-    
-    
     public Profesor(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String sueldo, String experiencia) {
         this.id = id;
         this.nombre = nombre;
@@ -37,6 +36,7 @@ public class Profesor {
         this.telefono = telefono;
         this.sueldo = sueldo;
         this.experiencia = experiencia;
+        this.tipo = "Profesor";
     }
 
     public String getId() {
@@ -107,4 +107,11 @@ public class Profesor {
         this.experiencia = experiencia;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }

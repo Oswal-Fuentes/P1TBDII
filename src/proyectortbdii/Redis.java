@@ -56,6 +56,7 @@ public class Redis {
         userProperties.put("telefono", profesor.getTelefono());
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
+        userProperties.put("tipo",profesor.getTipo());
         try {
             jedis.hmset(profesor.getId().toString(), userProperties);
         } catch (JedisException e) {
@@ -139,5 +140,9 @@ public class Redis {
 
     public void deleteAlumno(String id) {
         jedis.del(id);
+    }
+    
+    public String getTipo(String id){
+        return jedis.hget(id, "tipo");
     }
 }

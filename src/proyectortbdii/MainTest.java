@@ -28,11 +28,14 @@ public class MainTest {
 //            System.out.println(keyMap + " " + retrieveMap2.get(keyMap));
 //        }
 //        r.deleteProfesor("2");
+        System.out.println(r.getAllKeys().size());
         try {
-            for (String str :  r.readProfesor(r.getAllKeys().get(1)).keySet()) {
-                System.out.println(str + " = " + r.readProfesor(r.getAllKeys().get(1)).get(str));
+            for (int i = 1; i <= r.getAllKeys().size(); i++) {
+
+                for (String str : r.readProfesor(r.getAllKeys().get(i)).keySet()) {
+                    System.out.println(str + " = " + r.readProfesor(r.getAllKeys().get(1)).get(str));
+                }
             }
-           
         } catch (JedisException e) {
             System.out.println(e);
         }

@@ -77,24 +77,24 @@ public class Main extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         tf_login_username = new javax.swing.JTextField();
         jd_agregar_profesor = new javax.swing.JDialog();
-        tf_prof_nombre = new javax.swing.JTextField();
-        tf_prof_apellido = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
-        rb_prof_male = new javax.swing.JRadioButton();
-        rb_prof_female = new javax.swing.JRadioButton();
-        jdc_prof_nacimiento = new com.toedter.calendar.JDateChooser();
-        tf_prof_telefono = new javax.swing.JTextField();
-        sp_prof_sueldo = new javax.swing.JSpinner();
-        jLabel18 = new javax.swing.JLabel();
-        sp_prof_xp = new javax.swing.JSpinner();
-        cb_prof_categoria = new javax.swing.JComboBox<>();
-        jLabel21 = new javax.swing.JLabel();
+        jdc_editar_profesor_fecha1 = new com.toedter.calendar.JDateChooser();
+        tf_editar_profesor_apellido1 = new javax.swing.JTextField();
+        tf_editar_profesor_telefono1 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        sp_editar_profesor_sueldo1 = new javax.swing.JSpinner();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        sp_editar_profesor_xp1 = new javax.swing.JSpinner();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        cb_editar_profesor_categoria1 = new javax.swing.JComboBox<>();
+        jButton29 = new javax.swing.JButton();
+        jLabel55 = new javax.swing.JLabel();
+        rb_editar_profesor_male1 = new javax.swing.JRadioButton();
+        rb_editar_profesor_female1 = new javax.swing.JRadioButton();
+        tf_editar_profesor_nombre1 = new javax.swing.JTextField();
         jd_editar_profesor = new javax.swing.JDialog();
         tf_editar_profesor_nombre = new javax.swing.JTextField();
         tf_editar_profesor_apellido = new javax.swing.JTextField();
@@ -289,111 +289,113 @@ public class Main extends javax.swing.JFrame {
 
         jd_agregar_profesor.setTitle("Agregar Profesor");
 
-        jLabel13.setText("Nombre");
+        jLabel49.setText("Nombre");
 
-        jLabel14.setText("Apellido");
+        jLabel50.setText("Apellido");
 
-        jLabel15.setText("Fecha de Nacimiento");
+        jLabel51.setText("Años de Experiencia");
 
-        jLabel16.setText("Telefono");
+        jLabel52.setText("Fecha de Nacimiento");
 
-        jLabel17.setText("Sueldo");
+        jLabel53.setText("Telefono");
 
-        jButton19.setText("Agregar");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        jLabel36.setText("Categoria");
+
+        jLabel54.setText("Sueldo");
+
+        cb_editar_profesor_categoria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada", "Biciclo" }));
+
+        jButton29.setText("Guardar cambios");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                jButton29ActionPerformed(evt);
             }
         });
 
-        jLabel20.setText("Genero");
+        jLabel55.setText("Genero");
 
-        buttonGroup1.add(rb_prof_male);
-        rb_prof_male.setText("Masculino");
+        rb_editar_profesor_male1.setText("Masculino");
 
-        buttonGroup1.add(rb_prof_female);
-        rb_prof_female.setText("Femenino");
-
-        jLabel18.setText("Años de Experiencia");
-
-        cb_prof_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada", "Biciclo" }));
-
-        jLabel21.setText("Categoria");
+        rb_editar_profesor_female1.setText("Femenino");
 
         javax.swing.GroupLayout jd_agregar_profesorLayout = new javax.swing.GroupLayout(jd_agregar_profesor.getContentPane());
         jd_agregar_profesor.getContentPane().setLayout(jd_agregar_profesorLayout);
         jd_agregar_profesorLayout.setHorizontalGroup(
             jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregar_profesorLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
-                .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sp_prof_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(tf_prof_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                        .addComponent(tf_prof_apellido)
-                        .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
-                            .addComponent(rb_prof_male)
-                            .addGap(18, 18, 18)
-                            .addComponent(rb_prof_female))
-                        .addComponent(jdc_prof_nacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_prof_telefono))
-                    .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(cb_prof_categoria, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sp_prof_xp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
+                    .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
+                        .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel52)
+                            .addComponent(jLabel53)
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel49))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_editar_profesor_nombre1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                                .addComponent(tf_editar_profesor_apellido1)
+                                .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
+                                    .addComponent(rb_editar_profesor_male1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(rb_editar_profesor_female1))
+                                .addComponent(jdc_editar_profesor_fecha1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_editar_profesor_telefono1))
+                            .addComponent(sp_editar_profesor_sueldo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sp_editar_profesor_xp1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel36)
+                        .addGap(18, 18, 18)
+                        .addComponent(cb_editar_profesor_categoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60))
+            .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_agregar_profesorLayout.setVerticalGroup(
             jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_prof_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addComponent(tf_editar_profesor_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(tf_prof_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel50)
+                    .addComponent(tf_editar_profesor_apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(rb_prof_male)
-                    .addComponent(rb_prof_female))
+                    .addComponent(jLabel55)
+                    .addComponent(rb_editar_profesor_male1)
+                    .addComponent(rb_editar_profesor_female1))
                 .addGap(22, 22, 22)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jdc_prof_nacimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jdc_editar_profesor_fecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(tf_prof_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel53)
+                    .addComponent(tf_editar_profesor_telefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel17)
-                    .addComponent(sp_prof_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel54)
+                    .addComponent(sp_editar_profesor_sueldo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sp_prof_xp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
+                    .addComponent(sp_editar_profesor_xp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cb_prof_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_editar_profesor_categoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
 
@@ -895,7 +897,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        cb_modulo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Profesores", "Alumnos" }));
+        cb_modulo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Profesores", "Alumnos", "Vehiculos" }));
         cb_modulo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_moduloItemStateChanged(evt);
@@ -1149,42 +1151,6 @@ public class Main extends javax.swing.JFrame {
         jd_agregar_alumno.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        try {
-            Redis r = new Redis();
-            String uniqueID = UUID.randomUUID().toString();
-            String genero = "";
-            if (rb_prof_male.isSelected()) {
-                genero = "Masculino";
-            } else {
-                genero = "Femenino";
-            }
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String date = sdf.format(jdc_prof_nacimiento.getDate());
-            Profesor pro = new Profesor(uniqueID, tf_prof_nombre.getText(), tf_prof_apellido.getText(),
-                    genero, date, tf_prof_telefono.getText(),
-                    sp_prof_sueldo.getValue().toString(), sp_prof_xp.getValue().toString(),
-                    cb_prof_categoria.getItemAt(cb_prof_categoria.getSelectedIndex()), "");
-            //Insertar en Redis
-            r.createProfesor(pro);
-            //Cerrar ventana
-            jd_agregar_profesor.dispose();
-            JOptionPane.showMessageDialog(this, "Se agregó el profesor exitosamente.\n"
-                    + "Su ID es: " + uniqueID);
-            //Limpiar campos
-            tf_prof_nombre.setText(null);
-            tf_prof_apellido.setText(null);
-            buttonGroup1.clearSelection();
-            jdc_prof_nacimiento.setDate(null);
-            tf_prof_telefono.setText(null);
-            sp_prof_sueldo.setValue(0);
-            sp_prof_xp.setValue(0);
-            cb_prof_categoria.setSelectedIndex(0);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrio un error al crear el profesor");
-        }
-    }//GEN-LAST:event_jButton19ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         System.out.println(profes.size());
         if (cb_modulo.getSelectedItem().toString().equals("Profesores")) {
@@ -1394,13 +1360,27 @@ public class Main extends javax.swing.JFrame {
                 Date date = new SimpleDateFormat("yyyy-MM-dd").parse(alum.getFecha_nacimiento());
                 jdc_editar_alum_fecha.setDate(date);
                 tf_editar_alum_telefono.setText(alum.getTelefono());
-                cb_editar_alum_tipo_licencia.setSelectedItem(alum.getTipo_licencia());
                 //Abrir dialog
                 jd_editar_alumno.setModal(true);//Bloquear otras ventanas
                 jd_editar_alumno.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
                 jd_editar_alumno.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
                 jd_editar_alumno.setResizable(false);//No se puede modificar el tamaño
                 jd_editar_alumno.setVisible(true);
+            } else if (cb_modulo.getSelectedItem().toString().equals("Vehiculos")) {
+                Vehiculo vehiculo = vehiculos.get(jt_modulo.getSelectedRow());
+                System.out.println(jt_modulo.getSelectedRow());
+                CB_Uso_editar.setSelectedItem(vehiculo.getCategoria());
+                TF_tamano_editar.setText(vehiculo.getTamano());
+                TF_tarifa_editar.setText(vehiculo.getTarifa());
+                TF_consumo_editar.setText(vehiculo.getConsumo());
+                TF_kmRecorridos_editar.setText(vehiculo.getKm_recorridos());
+                CB_tipoVehiculo_editar.setSelectedItem(vehiculo.getTipo_vehiculo());
+                //Abrir dialog
+                JD_modificarVehiculo.setModal(true);//Bloquear otras ventanas
+                JD_modificarVehiculo.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+                JD_modificarVehiculo.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+                JD_modificarVehiculo.setResizable(false);//No se puede modificar el tamaño
+                JD_modificarVehiculo.setVisible(true);
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -1428,7 +1408,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_moduloItemStateChanged
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Profesores")) {
+         if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Profesores")) {
             try {
                 Redis r = new Redis();
                 r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
@@ -1443,6 +1423,15 @@ public class Main extends javax.swing.JFrame {
                 r.deleteObject(alumni.get(jt_modulo.getSelectedRow()).getId());
                 alumni.remove(jt_modulo.getSelectedRow());
                 JOptionPane.showMessageDialog(this, "Eliminó el alumno exitosamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Ocurrio un error al eliminar");
+            }
+        } else if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Vehiculos")) {
+            try {
+                Redis r = new Redis();
+                r.deleteObject(vehiculos.get(jt_modulo.getSelectedRow()).getID());
+                vehiculos.remove(jt_modulo.getSelectedRow());
+                JOptionPane.showMessageDialog(this, "Eliminó el vehiculo exitosamente");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Ocurrio un error al eliminar");
             }
@@ -1663,6 +1652,53 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        String id = profes.get(jt_modulo.getSelectedRow()).getId();
+        //Eliminar
+        try {
+            Redis r = new Redis();
+            r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
+            profes.remove(jt_modulo.getSelectedRow());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+        }
+        //Volver a agregar pero con valores nuevos
+        try {
+            Redis r = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            String genero = "";
+            if (rb_editar_profesor_male.isSelected()) {
+                genero = "Masculino";
+            } else {
+                genero = "Femenino";
+            }
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(jdc_editar_profesor_fecha.getDate());
+            Profesor pro = new Profesor(uniqueID, tf_editar_profesor_nombre.getText(), tf_editar_profesor_apellido.getText(),
+                    genero, date, tf_editar_profesor_telefono.getText(),
+                    sp_editar_profesor_sueldo.getValue().toString(), sp_editar_profesor_xp.getValue().toString(),
+                    cb_editar_profesor_categoria.getItemAt(cb_editar_profesor_categoria.getSelectedIndex()), "");
+            //Insertar en Redis
+            r.createProfesor(pro);
+            //Cerrar ventana
+            jd_editar_profesor.dispose();
+            JOptionPane.showMessageDialog(this, "Se modificó el profesor exitosamente.\n"
+                    + "Su ID es: " + uniqueID);
+            //Limpiar campos
+            tf_editar_profesor_nombre.setText(null);
+            tf_editar_profesor_apellido.setText(null);
+            buttonGroup1.clearSelection();
+            jdc_editar_profesor_fecha.setDate(null);
+            tf_editar_profesor_telefono.setText(null);
+            sp_editar_profesor_sueldo.setValue(0);
+            sp_editar_profesor_xp.setValue(0);
+            cb_editar_profesor_categoria.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+        }
+    }//GEN-LAST:event_jButton29ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1753,29 +1789,21 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_profesor_categoria;
+    private javax.swing.JComboBox<String> cb_editar_profesor_categoria1;
     private javax.swing.JComboBox<String> cb_modulo;
-    private javax.swing.JComboBox<String> cb_prof_categoria;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1789,6 +1817,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -1796,6 +1825,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -1813,7 +1849,7 @@ public class Main extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jdc_alum_fecha_nacimiento;
     private com.toedter.calendar.JDateChooser jdc_editar_alum_fecha;
     private com.toedter.calendar.JDateChooser jdc_editar_profesor_fecha;
-    private com.toedter.calendar.JDateChooser jdc_prof_nacimiento;
+    private com.toedter.calendar.JDateChooser jdc_editar_profesor_fecha1;
     private javax.swing.JPanel jp_principal;
     private javax.swing.JTable jt_modulo;
     private javax.swing.JLabel lb_foto;
@@ -1821,13 +1857,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_editar_alum_female;
     private javax.swing.JRadioButton rb_editar_alum_male;
     private javax.swing.JRadioButton rb_editar_profesor_female;
+    private javax.swing.JRadioButton rb_editar_profesor_female1;
     private javax.swing.JRadioButton rb_editar_profesor_male;
-    private javax.swing.JRadioButton rb_prof_female;
-    private javax.swing.JRadioButton rb_prof_male;
+    private javax.swing.JRadioButton rb_editar_profesor_male1;
     private javax.swing.JSpinner sp_editar_profesor_sueldo;
+    private javax.swing.JSpinner sp_editar_profesor_sueldo1;
     private javax.swing.JSpinner sp_editar_profesor_xp;
-    private javax.swing.JSpinner sp_prof_sueldo;
-    private javax.swing.JSpinner sp_prof_xp;
+    private javax.swing.JSpinner sp_editar_profesor_xp1;
     private javax.swing.JTextField tf_alum_apellido;
     private javax.swing.JRadioButton tf_alum_female;
     private javax.swing.JTextField tf_alum_nombre;
@@ -1836,15 +1872,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_editar_alum_nombre;
     private javax.swing.JTextField tf_editar_alum_telefono;
     private javax.swing.JTextField tf_editar_profesor_apellido;
+    private javax.swing.JTextField tf_editar_profesor_apellido1;
     private javax.swing.JTextField tf_editar_profesor_nombre;
+    private javax.swing.JTextField tf_editar_profesor_nombre1;
     private javax.swing.JTextField tf_editar_profesor_telefono;
+    private javax.swing.JTextField tf_editar_profesor_telefono1;
     private javax.swing.JPasswordField tf_login_password;
     private javax.swing.JTextField tf_login_username;
-    private javax.swing.JTextField tf_prof_apellido;
-    private javax.swing.JTextField tf_prof_nombre;
-    private javax.swing.JTextField tf_prof_telefono;
     // End of variables declaration//GEN-END:variables
 //int Height = 0, Width = 0;
     ArrayList<Profesor> profes = new ArrayList();
     ArrayList<Alumno> alumni = new ArrayList();
+    ArrayList<Vehiculo> vehiculos = new ArrayList();
 }

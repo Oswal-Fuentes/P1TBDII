@@ -11,12 +11,9 @@ package proyectortbdii;
  */
 public class Alumno {
 
-    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, profesor_asignado, tipo;
+    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, profesor_asignado, id_licencia, id_clase, tipo;
 
-    public Alumno() {
-    }
-
-    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String profesor_asignado) {
+    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String profesor_asignado, String id_licencia, String id_clase) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -25,23 +22,53 @@ public class Alumno {
         this.telefono = telefono;
         this.tipo_licencia = tipo_licencia;
         this.profesor_asignado = profesor_asignado;
+        this.id_licencia = id_licencia;
+        this.id_clase = id_clase;
         this.tipo = "Alumno";
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getId() {
+        return id;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getTipo_licencia() {
+        return tipo_licencia;
     }
 
     public String getProfesor_asignado() {
         return profesor_asignado;
     }
 
-    public void setProfesor_asignado(String profesor_asignado) {
-        this.profesor_asignado = profesor_asignado;
+    public String getId_licencia() {
+        return id_licencia;
+    }
+
+    public String getId_clase() {
+        return id_clase;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 
     public void setId(String id) {
@@ -72,31 +99,15 @@ public class Alumno {
         this.tipo_licencia = tipo_licencia;
     }
 
-    public String getId() {
-        return id;
+    public void setProfesor_asignado(String profesor_asignado) {
+        this.profesor_asignado = profesor_asignado;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setId_licencia(String id_licencia) {
+        this.id_licencia = id_licencia;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public String getTipo_licencia() {
-        return tipo_licencia;
-    }
+    public void setId_clase(String id_clase) {
+        this.id_clase = id_clase;
+    }        
 }

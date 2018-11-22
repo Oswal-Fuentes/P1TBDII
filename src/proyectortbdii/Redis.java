@@ -53,20 +53,7 @@ public class Redis {
     public void setVehiculoAsignado(String id_vehiculo, String id_profesor) {
         jedis.hset(id_vehiculo, "profesor_asignado", id_profesor);
     }
-
-    //categoria = tipo de licencia se usa en Alumno
-    public String getIdProfesorCategoria(String tipo_licencia) {
-        ArrayList<String> keys = new ArrayList();
-        keys = getAllKeys();
-        for (int x = 0; x < keys.size(); x++) {
-            if (getTipo(keys.get(x)).equals("Profesor")) {
-                if (getAtributo(keys.get(x), "categoria").equals(tipo_licencia)) {
-                    return keys.get(x);
-                }
-            }
-        }
-        return "";
-    }
+   
 
     public void createProfesor(Profesor profesor) {
         Map<String, String> userProperties = new HashMap<String, String>();
@@ -79,7 +66,6 @@ public class Redis {
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
         userProperties.put("categoria", profesor.getCategoria());
-        userProperties.put("vehiculo_asignado", profesor.getVehiculo_asignado());
         userProperties.put("tipo", profesor.getTipo());
 
         try {
@@ -101,6 +87,8 @@ public class Redis {
         userProperties.put("telefono", alumno.getTelefono());
         userProperties.put("tipo_licencia", alumno.getTipo_licencia());
         userProperties.put("profesor_asignado", alumno.getProfesor_asignado());
+        userProperties.put("id_licencia", alumno.getId_licencia());
+        userProperties.put("id_clase", alumno.getId_clase());
         userProperties.put("tipo", alumno.getTipo());
         try {
             jedis.hmset(alumno.getId().toString(), userProperties);
@@ -113,9 +101,9 @@ public class Redis {
 
     public void createVehiculo(Vehiculo vehiculo) {
         Map<String, String> userProperties = new HashMap<String, String>();
-        userProperties.put("id", vehiculo.getID());
-        userProperties.put("profesor_asignado", vehiculo.getProfesor_asignado());
-        userProperties.put("categoria", vehiculo.getCategoria());
+        userProperties.put("id", vehiculo.getId());
+        userProperties.put("id_profesor", vehiculo.getId_profesor());
+        userProperties.put("tipo_licencia", vehiculo.getTipo_licencia());
         userProperties.put("tamano", vehiculo.getTamano());
         userProperties.put("tarifa", vehiculo.getTarifa());
         userProperties.put("consumo", vehiculo.getConsumo());
@@ -123,7 +111,7 @@ public class Redis {
         userProperties.put("tipo_vehiculo", vehiculo.getTipo_vehiculo());
         userProperties.put("tipo", vehiculo.getTipo());
         try {
-            jedis.hmset(vehiculo.getID(), userProperties);
+            jedis.hmset(vehiculo.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
@@ -132,14 +120,14 @@ public class Redis {
 
     public void createClasePractica(Clase_Practica clase) {
         Map<String, String> userProperties = new HashMap<String, String>();
-        userProperties.put("id", clase.getID());
-        userProperties.put("profesor_asignado", clase.getProfesor_asignado());
-        userProperties.put("alumno_asignado", clase.getAlumno_asignado());
-        userProperties.put("tipo_clase", clase.getTipo_clase());
-        userProperties.put("examenPractico", clase.getExamenPractico());
+        userProperties.put("id", clase.getId());
+        userProperties.put("id_profesor", clase.getId_profesor());
+        userProperties.put("id_alumno", clase.getId_alumno());
+        userProperties.put("id_vehiculo", clase.getId_vehiculo());
+        userProperties.put("nota_practico", clase.getNota_practico());
         userProperties.put("tipo", clase.getTipo());
         try {
-            jedis.hmset(clase.getID(), userProperties);
+            jedis.hmset(clase.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
@@ -148,16 +136,13 @@ public class Redis {
 
     public void createClaseTeorica(Clase_Teorica clase) {
         Map<String, String> userProperties = new HashMap<String, String>();
-        userProperties.put("id", clase.getID());
-        userProperties.put("profesor_asignado", clase.getProfesor_asignado());
-        for (String str : clase.getAlumno_asignado()) {
-            userProperties.put("alumno_asignado", str);
-        }
-        userProperties.put("examenTeorico", clase.getExamenTeorico());
-        userProperties.put("tipo_clase", clase.getTipo_clase());
+        userProperties.put("id", clase.getId());
+        userProperties.put("id_profesor", clase.getId_profesor());
+        userProperties.put("id_alumno", clase.getId_alumno());
+        userProperties.put("nota_teorica", clase.getNota_teorica());
         userProperties.put("tipo", clase.getTipo());
         try {
-            jedis.hmset(clase.getID(), userProperties);
+            jedis.hmset(clase.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
@@ -180,15 +165,12 @@ public class Redis {
         }
         jedis.close();
     }
-
+    
     public void createLicencia(Licencia licencia) {
         Map<String, String> userProperties = new HashMap<String, String>();
         userProperties.put("id", licencia.getId());
-        userProperties.put("categoria", licencia.getCategoria());
+        userProperties.put("id_alumno", licencia.getId_alumno());
         userProperties.put("tipo_licencia", licencia.getTipo_licencia());
-        userProperties.put("fotocopiaDNI", licencia.getFotocopiaDNI());
-        userProperties.put("fotocopiaOtrasLicencias", licencia.getFotocopiaOtrasLicencias());
-        userProperties.put("certificadoMedico", licencia.getCertificadoMedico());
         userProperties.put("tipo", licencia.getTipo());
         try {
             jedis.hmset(licencia.getId(), userProperties);
@@ -197,7 +179,7 @@ public class Redis {
         }
         jedis.close();
     }
-
+    
     public void updateProfesor(Profesor profesor) {
         Map<String, String> userProperties = new HashMap<String, String>();
         userProperties.put("id", profesor.getId());
@@ -208,10 +190,8 @@ public class Redis {
         userProperties.put("telefono", profesor.getTelefono());
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
-        userProperties.put("categoria", profesor.getExperiencia());
-        userProperties.put("vehiculo_asignado", profesor.getVehiculo_asignado());
+        userProperties.put("categoria", profesor.getCategoria());
         userProperties.put("tipo", profesor.getTipo());
-
         try {
             jedis.hmset(profesor.getId(), userProperties);
         } catch (JedisException e) {
@@ -223,9 +203,9 @@ public class Redis {
 
     public void updateVehiculo(Vehiculo vehiculo) {
         Map<String, String> userProperties = new HashMap<String, String>();
-        userProperties.put("id", vehiculo.getID());
-        userProperties.put("profesor_asignado", vehiculo.getProfesor_asignado());
-        userProperties.put("categoria", vehiculo.getCategoria());
+        userProperties.put("id", vehiculo.getId());
+        userProperties.put("id_profesor", vehiculo.getId_profesor());
+        userProperties.put("tipo_licencia", vehiculo.getTipo_licencia());
         userProperties.put("tamano", vehiculo.getTamano());
         userProperties.put("tarifa", vehiculo.getTarifa());
         userProperties.put("consumo", vehiculo.getConsumo());
@@ -233,7 +213,7 @@ public class Redis {
         userProperties.put("tipo_vehiculo", vehiculo.getTipo_vehiculo());
         userProperties.put("tipo", vehiculo.getTipo());
         try {
-            jedis.hmset(vehiculo.getID(), userProperties);
+            jedis.hmset(vehiculo.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
@@ -242,14 +222,14 @@ public class Redis {
 
     public void updateClasePractica(Clase_Practica clase) {
         Map<String, String> userProperties = new HashMap<String, String>();
-        userProperties.put("id", clase.getID());
-        userProperties.put("profesor_asignado", clase.getProfesor_asignado());
-        userProperties.put("alumno_asignado", clase.getAlumno_asignado());
-        userProperties.put("tipo_clase", clase.getTipo_clase());
-        userProperties.put("examenPractico", clase.getExamenPractico());
+        userProperties.put("id", clase.getId());
+        userProperties.put("id_profesor", clase.getId_profesor());
+        userProperties.put("id_alumno", clase.getId_alumno());
+        userProperties.put("id_vehiculo", clase.getId_vehiculo());
+        userProperties.put("nota_practico", clase.getNota_practico());
         userProperties.put("tipo", clase.getTipo());
         try {
-            jedis.hmset(clase.getID(), userProperties);
+            jedis.hmset(clase.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
@@ -258,17 +238,13 @@ public class Redis {
 
     public void updateClaseTeorica(Clase_Teorica clase) {
         Map<String, String> userProperties = new HashMap<String, String>();
-
-        userProperties.put("id", clase.getID());
-        userProperties.put("profesor_asignado", clase.getProfesor_asignado());
-        for (String str : clase.getAlumno_asignado()) {
-            userProperties.put("alumno_asignado", str);
-        }
-        userProperties.put("examenTeorico", clase.getExamenTeorico());
-        userProperties.put("tipo_clase", clase.getTipo_clase());
+        userProperties.put("id", clase.getId());
+        userProperties.put("id_profesor", clase.getId_profesor());
+        userProperties.put("id_alumno", clase.getId_alumno());
+        userProperties.put("nota_teorica", clase.getNota_teorica());
         userProperties.put("tipo", clase.getTipo());
         try {
-            jedis.hmset(clase.getID(), userProperties);
+            jedis.hmset(clase.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
         }
@@ -291,17 +267,14 @@ public class Redis {
         }
         jedis.close();
     }
-
+    
     public void updateLicencia(Licencia licencia) {
         Map<String, String> userProperties = new HashMap<String, String>();
         userProperties.put("id", licencia.getId());
-        userProperties.put("categoria", licencia.getCategoria());
+        userProperties.put("id_alumno", licencia.getId_alumno());
         userProperties.put("tipo_licencia", licencia.getTipo_licencia());
-        userProperties.put("fotocopiaDNI", licencia.getFotocopiaDNI());
-        userProperties.put("fotocopiaOtrasLicencias", licencia.getFotocopiaOtrasLicencias());
-        userProperties.put("certificadoMedico", licencia.getCertificadoMedico());
         userProperties.put("tipo", licencia.getTipo());
-        try {
+         try {
             jedis.hmset(licencia.getId(), userProperties);
         } catch (JedisException e) {
             System.out.println("Error" + e);
@@ -319,8 +292,9 @@ public class Redis {
         userProperties.put("telefono", alumno.getTelefono());
         userProperties.put("tipo_licencia", alumno.getTipo_licencia());
         userProperties.put("profesor_asignado", alumno.getProfesor_asignado());
+        userProperties.put("id_licencia", alumno.getId_licencia());
+        userProperties.put("id_clase", alumno.getId_clase());
         userProperties.put("tipo", alumno.getTipo());
-
         try {
             jedis.hmset(alumno.getId().toString(), userProperties);
         } catch (JedisException e) {

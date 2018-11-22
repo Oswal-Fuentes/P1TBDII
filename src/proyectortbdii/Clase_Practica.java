@@ -1,76 +1,64 @@
-// clase Clase
 package proyectortbdii;
 
 public class Clase_Practica {
-
-    // atributos
     private String id;
-    private String profesor_asignado; // El profesor que da la clase.
-    private String alumno_asignado; // El alumno que recibe la clase.
-    private String tipo_clase; // Depende del tipo de licencia.
-    private String examenPractico;
+    private String id_profesor; 
+    private String id_alumno;
+    private String id_vehiculo;
+    private String nota_practico;
     private String tipo;
 
-    // constructores
-    public Clase_Practica() {
-    }
-
-    public Clase_Practica(String ID, String idProfesor, String idAlumno,
-            String tipo_clase, String examenPractico) {
-        this.id = ID;
-        this.profesor_asignado = idProfesor;
-        this.alumno_asignado = idAlumno;
-        this.tipo_clase = tipo_clase;
-        this.examenPractico = examenPractico;
+    public Clase_Practica(String id, String id_profesor, String id_alumno, String id_vehiculo, String nota_practico) {
+        this.id = id;
+        this.id_profesor = id_profesor;
+        this.id_alumno = id_alumno;
+        this.id_vehiculo = id_vehiculo;
+        this.nota_practico = nota_practico;
         this.tipo = "Clase_Practica";
     }
 
-    // getters & setters
-    public String getID() {
+    public String getId() {
         return id;
     }
 
-    public String getProfesor_asignado() {
-        return profesor_asignado;
+    public String getId_profesor() {
+        return id_profesor;
     }
 
-    public String getAlumno_asignado() {
-        return alumno_asignado;
+    public String getId_alumno() {
+        return id_alumno;
     }
 
-    public String getTipo_clase() {
-        return tipo_clase;
+    public String getId_vehiculo() {
+        return id_vehiculo;
     }
 
-    public String getExamenPractico() {
-        return examenPractico;
+    public String getNota_practico() {
+        return nota_practico;
     }
 
     public String getTipo() {
         return tipo;
     }
 
-    public void setID(String ID) {
-        this.id = ID;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setProfesor_asignado(String idProfesor) {
-        this.profesor_asignado = idProfesor;
+    public void setId_profesor(String id_profesor) {
+        this.id_profesor = id_profesor;
     }
 
-    public void setAlumno_asignado(String idAlumno) {
-        this.alumno_asignado = idAlumno;
+    public void setId_alumno(String id_alumno) {
+        this.id_alumno = id_alumno;
     }
 
-    public void setTipo_clase(String tipo_clase) {
-        this.tipo_clase = tipo_clase;
+    public void setId_vehiculo(String id_vehiculo) {
+        this.id_vehiculo = id_vehiculo;
     }
 
-    public void setExamenPractico(String examenPractico) {
-        this.examenPractico = examenPractico;
+    public void setNota_practico(String nota_practico) {
+        this.nota_practico = nota_practico;
     }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    
 }

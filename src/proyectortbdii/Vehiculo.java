@@ -1,82 +1,39 @@
-// clase Vehículo
 package proyectortbdii;
 
 public class Vehiculo {
 
-    // atributos
-    protected String id;
-    protected String profesor_asignado;
-    protected String categoria; // Tiene que ir de acuerdo a los tipos de licencias.
-    protected String tamano; // En metros, o cualquier otra unidad de distancia.
-    protected String tarifa; // En base a esto se saca el costo de enseñanza práctica.
-    protected String consumo; // El consumo de un vehículo después de una clase práctica.
-    protected String km_recorridos; // Se debe guardar después de cada clase práctica.
-    protected String tipo_vehiculo;
-    protected String tipo;
+    private String id;
+    private String id_profesor;
+    private String tipo_licencia;
+    private String tamano; 
+    private String tarifa; 
+    private String consumo; 
+    private String km_recorridos; 
+    private String tipo_vehiculo;
+    private String tipo;    
 
-    // constructores
-    public Vehiculo() {
-    }
-
-    public Vehiculo(String id, String profesor_asignado, String categoria, String tamano, String tarifa, String consumo, String km_recorridos, String tipo_vehiculo, String tipo) {
+    public Vehiculo(String id, String id_profesor, String tipo_licencia, String tamano, String tarifa, String consumo, String km_recorridos, String tipo_vehiculo) {
         this.id = id;
-        this.profesor_asignado = "";
-        this.categoria = categoria;
+        this.id_profesor = id_profesor;
+        this.tipo_licencia = tipo_licencia;
         this.tamano = tamano;
         this.tarifa = tarifa;
         this.consumo = consumo;
         this.km_recorridos = km_recorridos;
         this.tipo_vehiculo = tipo_vehiculo;
-        this.tipo = tipo;
-    }
-    
-    // getters & setters    
-    public String getID() {
-        return id;
+        this.tipo = "Vehiculo";
     }
 
-    public String getProfesor_asignado() {
-        return profesor_asignado;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public void setId_profesor(String id_profesor) {
+        this.id_profesor = id_profesor;
     }
 
-    public String getTamano() {
-        return tamano;
-    }
-
-    public String getTarifa() {
-        return tarifa;
-    }
-
-    public String getConsumo() {
-        return consumo;
-    }
-
-    public String getKm_recorridos() {
-        return km_recorridos;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getTipo_vehiculo() {
-        return tipo_vehiculo;
-    }
-
-    public void setID(String ID) {
-        this.id = ID;
-    }
-
-    public void setProfesor_asignado(String idProfesor) {
-        this.profesor_asignado = idProfesor;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setTipo_licencia(String tipo_licencia) {
+        this.tipo_licencia = tipo_licencia;
     }
 
     public void setTamano(String tamano) {
@@ -95,11 +52,44 @@ public class Vehiculo {
         this.km_recorridos = km_recorridos;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public void setTipo_vehiculo(String tipo_vehiculo) {
         this.tipo_vehiculo = tipo_vehiculo;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getId_profesor() {
+        return id_profesor;
+    }
+
+    public String getTipo_licencia() {
+        return tipo_licencia;
+    }
+
+    public String getTamano() {
+        return tamano;
+    }
+
+    public String getTarifa() {
+        return tarifa;
+    }
+
+    public String getConsumo() {
+        return consumo;
+    }
+
+    public String getKm_recorridos() {
+        return km_recorridos;
+    }
+
+    public String getTipo_vehiculo() {
+        return tipo_vehiculo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
 }

@@ -23,14 +23,9 @@ public class Profesor {
     private String sueldo;
     private String experiencia;
     private String categoria;
-    private String vehiculo_asignado;
     private String tipo;
 
-    public Profesor() {
-        this.tipo = "Profesor";
-    }
-
-    public Profesor(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String sueldo, String experiencia, String categoria, String vehiculo_asignado) {
+    public Profesor(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String sueldo, String experiencia, String categoria) {
 
         this.id = id;
         this.nombre = nombre;
@@ -41,24 +36,11 @@ public class Profesor {
         this.sueldo = sueldo;
         this.experiencia = experiencia;
         this.categoria = categoria;
-        this.vehiculo_asignado = vehiculo_asignado;
         this.tipo = "Profesor";
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getTipo() {
         return tipo;
-    }
-
-    public void setVehiculo_asignado(String vehiculo_asignado) {
-        this.vehiculo_asignado = vehiculo_asignado;
-    }
-
-    public String getVehiculo_asignado() {
-        return vehiculo_asignado;
     }
 
     public void setCategoria(String categoria) {
@@ -130,10 +112,6 @@ public class Profesor {
     }
 
     public void setExperiencia(String experiencia) {
-        this.experiencia = experiencia;
-    }
-
-    public void toString(String experiencia) {
         this.experiencia = experiencia;
     }
 }

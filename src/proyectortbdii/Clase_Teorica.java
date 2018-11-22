@@ -13,68 +13,54 @@ import java.util.ArrayList;
  */
 public class Clase_Teorica {
 
-    // atributos
     private String id;
-    private String profesor_asignado; // El profesor que da la clase.
-    private ArrayList<String> alumno_asignado; // recibe una lista de alumnos.
-    private String examenTeorico;
-    private String tipo_clase; // Depende del tipo de licencia.
+    private String id_profesor;
+    private String id_alumno;
+    private String nota_teorica;
     private String tipo;
 
-    public Clase_Teorica(String ID, String profesor_asignado, ArrayList<String> alumno_asignado, String examenTeorico, String tipo_clase) {
-        this.id = ID;
-        this.profesor_asignado = profesor_asignado;
-        this.alumno_asignado = alumno_asignado;
-        this.examenTeorico = examenTeorico;
-        this.tipo_clase = tipo_clase;
+    public Clase_Teorica(String id, String id_profesor, String id_alumno, String nota_teorica) {
+        this.id = id;
+        this.id_profesor = id_profesor;
+        this.id_alumno = id_alumno;
+        this.nota_teorica = nota_teorica;
         this.tipo = "Clase_Teorica";
     }
 
-    public String getID() {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setId_profesor(String id_profesor) {
+        this.id_profesor = id_profesor;
+    }
+
+    public void setId_alumno(String id_alumno) {
+        this.id_alumno = id_alumno;
+    }
+
+    public void setNota_teorica(String nota_teorica) {
+        this.nota_teorica = nota_teorica;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public String getProfesor_asignado() {
-        return profesor_asignado;
+    public String getId_profesor() {
+        return id_profesor;
     }
 
-    public ArrayList<String> getAlumno_asignado() {
-        return alumno_asignado;
+    public String getId_alumno() {
+        return id_alumno;
     }
 
-    public String getExamenTeorico() {
-        return examenTeorico;
-    }
-
-    public String getTipo_clase() {
-        return tipo_clase;
+    public String getNota_teorica() {
+        return nota_teorica;
     }
 
     public String getTipo() {
         return tipo;
     }
 
-    public void setID(String ID) {
-        this.id = ID;
-    }
-
-    public void setProfesor_asignado(String profesor_asignado) {
-        this.profesor_asignado = profesor_asignado;
-    }
-
-    public void setAlumno_asignado(ArrayList<String> alumno_asignado) {
-        this.alumno_asignado = alumno_asignado;
-    }
-
-    public void setExamenTeorico(String examenTeorico) {
-        this.examenTeorico = examenTeorico;
-    }
-
-    public void setTipo_clase(String tipo_clase) {
-        this.tipo_clase = tipo_clase;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 }

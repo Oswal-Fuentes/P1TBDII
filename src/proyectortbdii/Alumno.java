@@ -11,9 +11,9 @@ package proyectortbdii;
  */
 public class Alumno {
 
-    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, profesor_asignado, id_licencia, id_clase, tipo;
+    private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, id_licencia, id_clase, tipo;
 
-    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String profesor_asignado, String id_licencia, String id_clase) {
+    public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String id_licencia, String id_clase) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -21,7 +21,6 @@ public class Alumno {
         this.fecha_nacimiento = fecha_nacimiento;
         this.telefono = telefono;
         this.tipo_licencia = tipo_licencia;
-        this.profesor_asignado = profesor_asignado;
         this.id_licencia = id_licencia;
         this.id_clase = id_clase;
         this.tipo = "Alumno";
@@ -53,10 +52,6 @@ public class Alumno {
 
     public String getTipo_licencia() {
         return tipo_licencia;
-    }
-
-    public String getProfesor_asignado() {
-        return profesor_asignado;
     }
 
     public String getId_licencia() {
@@ -97,10 +92,6 @@ public class Alumno {
 
     public void setTipo_licencia(String tipo_licencia) {
         this.tipo_licencia = tipo_licencia;
-    }
-
-    public void setProfesor_asignado(String profesor_asignado) {
-        this.profesor_asignado = profesor_asignado;
     }
 
     public void setId_licencia(String id_licencia) {

@@ -115,8 +115,8 @@ public class Main extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         cb_editar_profesor_categoria = new javax.swing.JComboBox<>();
         jd_agregar_alumno = new javax.swing.JDialog();
-        tf_nombre2 = new javax.swing.JTextField();
-        tf_correo4 = new javax.swing.JTextField();
+        tf_alum_nombre = new javax.swing.JTextField();
+        tf_alum_apellido = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -124,14 +124,14 @@ public class Main extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jButton25 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
-        tf_correo5 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        rb_alum_male = new javax.swing.JRadioButton();
+        tf_alum_female = new javax.swing.JRadioButton();
+        jdc_alum_fecha_nacimiento = new com.toedter.calendar.JDateChooser();
+        tf_alum_telefono = new javax.swing.JTextField();
+        cb_alum_tipo_licencia = new javax.swing.JComboBox<>();
         jd_editar_alumno = new javax.swing.JDialog();
-        tf_nombre3 = new javax.swing.JTextField();
-        tf_correo6 = new javax.swing.JTextField();
+        tf_editar_alum_nombre = new javax.swing.JTextField();
+        tf_editar_alum_apellido = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -139,11 +139,11 @@ public class Main extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jButton26 = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jDateChooser4 = new com.toedter.calendar.JDateChooser();
-        tf_correo7 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        rb_editar_alum_male = new javax.swing.JRadioButton();
+        rb_editar_alum_female = new javax.swing.JRadioButton();
+        jdc_editar_alum_fecha = new com.toedter.calendar.JDateChooser();
+        tf_editar_alum_telefono = new javax.swing.JTextField();
+        cb_editar_alum_tipo_licencia = new javax.swing.JComboBox<>();
         JD_agregarVehiculo = new javax.swing.JDialog();
         L_vehiculo = new javax.swing.JLabel();
         L_uso = new javax.swing.JLabel();
@@ -524,16 +524,21 @@ public class Main extends javax.swing.JFrame {
         jLabel27.setText("Tipo Licencia");
 
         jButton25.setText("Agregar");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         jLabel28.setText("Genero");
 
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setText("Masculino");
+        buttonGroup1.add(rb_alum_male);
+        rb_alum_male.setText("Masculino");
 
-        buttonGroup1.add(jRadioButton6);
-        jRadioButton6.setText("Femenino");
+        buttonGroup1.add(tf_alum_female);
+        tf_alum_female.setText("Femenino");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada" }));
+        cb_alum_tipo_licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada" }));
 
         javax.swing.GroupLayout jd_agregar_alumnoLayout = new javax.swing.GroupLayout(jd_agregar_alumno.getContentPane());
         jd_agregar_alumno.getContentPane().setLayout(jd_agregar_alumnoLayout);
@@ -554,15 +559,15 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel23))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_nombre2, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                    .addComponent(tf_correo4)
+                    .addComponent(tf_alum_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                    .addComponent(tf_alum_apellido)
                     .addGroup(jd_agregar_alumnoLayout.createSequentialGroup()
-                        .addComponent(jRadioButton5)
+                        .addComponent(rb_alum_male)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton6))
-                    .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_correo5)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(tf_alum_female))
+                    .addComponent(jdc_alum_fecha_nacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tf_alum_telefono)
+                    .addComponent(cb_alum_tipo_licencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
         );
         jd_agregar_alumnoLayout.setVerticalGroup(
@@ -570,29 +575,29 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_agregar_alumnoLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_alum_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel24)
-                    .addComponent(tf_correo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_alum_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
+                    .addComponent(rb_alum_male)
+                    .addComponent(tf_alum_female))
                 .addGap(22, 22, 22)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jdc_alum_fecha_nacimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(tf_correo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_alum_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_agregar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_alum_tipo_licencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -611,16 +616,21 @@ public class Main extends javax.swing.JFrame {
         jLabel33.setText("Tipo Licencia");
 
         jButton26.setText("Guardar cambios");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
 
         jLabel34.setText("Genero");
 
-        buttonGroup1.add(jRadioButton7);
-        jRadioButton7.setText("Masculino");
+        buttonGroup1.add(rb_editar_alum_male);
+        rb_editar_alum_male.setText("Masculino");
 
-        buttonGroup1.add(jRadioButton8);
-        jRadioButton8.setText("Femenino");
+        buttonGroup1.add(rb_editar_alum_female);
+        rb_editar_alum_female.setText("Femenino");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada" }));
+        cb_editar_alum_tipo_licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada" }));
 
         javax.swing.GroupLayout jd_editar_alumnoLayout = new javax.swing.GroupLayout(jd_editar_alumno.getContentPane());
         jd_editar_alumno.getContentPane().setLayout(jd_editar_alumnoLayout);
@@ -641,15 +651,15 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel29))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_nombre3, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                    .addComponent(tf_correo6)
+                    .addComponent(tf_editar_alum_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                    .addComponent(tf_editar_alum_apellido)
                     .addGroup(jd_editar_alumnoLayout.createSequentialGroup()
-                        .addComponent(jRadioButton7)
+                        .addComponent(rb_editar_alum_male)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton8))
-                    .addComponent(jDateChooser4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tf_correo7)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(rb_editar_alum_female))
+                    .addComponent(jdc_editar_alum_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tf_editar_alum_telefono)
+                    .addComponent(cb_editar_alum_tipo_licencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
         );
         jd_editar_alumnoLayout.setVerticalGroup(
@@ -657,29 +667,29 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_editar_alumnoLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_nombre3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_editar_alum_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel30)
-                    .addComponent(tf_correo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_editar_alum_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton8))
+                    .addComponent(rb_editar_alum_male)
+                    .addComponent(rb_editar_alum_female))
                 .addGap(22, 22, 22)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jdc_editar_alum_fecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(tf_correo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_editar_alum_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_editar_alumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_editar_alum_tipo_licencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -1225,32 +1235,7 @@ public class Main extends javax.swing.JFrame {
                             }
                         }
                         profes.add(pro);
-                    } //else if (tipo.equals("Alumno")) {
-//                        Map<String, String> datos = new HashMap<String, String>();
-//                        datos = r.readObject(keys.get(i));
-//                        for (Map.Entry<String, String> entry : datos.entrySet()) {
-//                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "";
-//                            if (entry.getKey().equals("id")) {
-//                                id = entry.getValue();
-//                            } else if (entry.getKey().equals("nombre")) {
-//                                nombre = entry.getValue();
-//                            } else if (entry.getKey().equals("apellido")) {
-//                                apellido = entry.getValue();
-//                            } else if (entry.getKey().equals("genero")) {
-//                                genero = entry.getValue();
-//                            } else if (entry.getKey().equals("fecha_nacimiento")) {
-//                                fecha_nacimiento = entry.getValue();
-//                            } else if (entry.getKey().equals("telefono")) {
-//                                telefono = entry.getValue();
-//                            } else if (entry.getKey().equals("tipo_licencia")) {
-//                                tipo_licencia = entry.getValue();
-//                            }
-//                            Alumno alu = new Alumno(id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia);
-//                            alumni.add(alu);
-//                        }
-//                    }
-//
-//                }
+                    }
                     jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{},
                             new String[]{
@@ -1264,31 +1249,112 @@ public class Main extends javax.swing.JFrame {
                         m.addRow(row);
                         jt_modulo.setModel(m);
                     }
-                    
                 }
             } catch (JedisException e) {
                 System.out.println(e);
             }
-        } else {
+        } else if (cb_modulo.getSelectedItem().toString().equals("Alumnos")) {
+            alumni.clear();
             Redis r = new Redis();
-            ArrayList<Alumno> alumnos = new ArrayList();
+            ArrayList<String> keys = new ArrayList();
+            keys = r.getAllKeys();
             try {
-                /*for (int i = 0; i < r.getAllKeys().size(); i++) {
-                    if (r.readProfesor(r.getAllKeys().get(i)).get("tipo").equals("Alumno")) {
-                        Alumno alum = new Alumno(r.readProfesor(r.getAllKeys().get(i)).get("id"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("nombre"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("apellido"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("genero"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("fecha_nacimiento"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("telefono"),
-                                r.readProfesor(r.getAllKeys().get(i)).get("tipo_licencia"));
-                        alumnos.add(alum);
+                for (int i = 0; i < keys.size(); i++) {
+                    String tipo = r.getTipo(keys.get(i));
+                    if (tipo.equals("Alumno")) {
+                        Map<String, String> datos = new HashMap<String, String>();
+                        datos = r.readObject(keys.get(i));
+                        Alumno alum = new Alumno();
+                        for (Map.Entry<String, String> entry : datos.entrySet()) {
+                            //System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
+                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "", profesor_asignado = "";
+                            if (entry.getKey().equals("id")) {
+                                id = entry.getValue();
+                                alum.setId(id);
+                            } else if (entry.getKey().equals("nombre")) {
+                                nombre = entry.getValue();
+                                alum.setNombre(nombre);
+                            } else if (entry.getKey().equals("apellido")) {
+                                apellido = entry.getValue();
+                                alum.setApellido(apellido);
+                            } else if (entry.getKey().equals("genero")) {
+                                genero = entry.getValue();
+                                alum.setGenero(genero);
+                            } else if (entry.getKey().equals("fecha_nacimiento")) {
+                                fecha_nacimiento = entry.getValue();
+                                alum.setFecha_nacimiento(fecha_nacimiento);
+                            } else if (entry.getKey().equals("telefono")) {
+                                telefono = entry.getValue();
+                                alum.setTelefono(telefono);
+                            } else if (entry.getKey().equals("tipo_licencia")) {
+                                tipo_licencia = entry.getValue();
+                                alum.setTipo_licencia(tipo_licencia);
+                            } else if (entry.getKey().equals("profesor_asignado")) {
+                                profesor_asignado = entry.getValue();
+                                alum.setProfesor_asignado(profesor_asignado);
+                            }
+                        }
+                        alumni.add(alum);
                     }
-                }*/
+                    jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{},
+                            new String[]{
+                                "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Tipo Licencia", "Profesor Asignado"
+                            }
+                    ));
+                    for (Alumno a : alumni) {
+                        Object row[] = {a.getId(), a.getNombre(), a.getApellido(), a.getGenero(), a.getFecha_nacimiento(),
+                            a.getTelefono(), a.getTipo_licencia(), a.getProfesor_asignado()};
+                        DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
+                        m.addRow(row);
+                        jt_modulo.setModel(m);
+                    }
+                }
             } catch (JedisException e) {
                 System.out.println(e);
             }
         }
+//            Map<String, String> datos = new HashMap<String, String>();
+//            datos = r.readObject(keys.get(i));
+//            for (Map.Entry<String, String> entry : datos.entrySet()) {
+//                String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "";
+//                if (entry.getKey().equals("id")) {
+//                    id = entry.getValue();
+//                } else if (entry.getKey().equals("nombre")) {
+//                    nombre = entry.getValue();
+//                } else if (entry.getKey().equals("apellido")) {
+//                    apellido = entry.getValue();
+//                } else if (entry.getKey().equals("genero")) {
+//                    genero = entry.getValue();
+//                } else if (entry.getKey().equals("fecha_nacimiento")) {
+//                    fecha_nacimiento = entry.getValue();
+//                } else if (entry.getKey().equals("telefono")) {
+//                    telefono = entry.getValue();
+//                } else if (entry.getKey().equals("tipo_licencia")) {
+//                    tipo_licencia = entry.getValue();
+//                }
+//                Alumno alu = new Alumno(id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia);
+//                alumni.add(alu);
+//            }
+//        }
+//        Redis r = new Redis();
+//        ArrayList<Alumno> alumnos = new ArrayList();
+//        try {
+//            /*for (int i = 0; i < r.getAllKeys().size(); i++) {
+//                    if (r.readProfesor(r.getAllKeys().get(i)).get("tipo").equals("Alumno")) {
+//                        Alumno alum = new Alumno(r.readProfesor(r.getAllKeys().get(i)).get("id"),
+//                                r.readProfesor(r.getAllKeys().get(i)).get("nombre"),
+//                                r.readProfesor(r.getAllKeys().get(i)).get("apellido"),
+//                                r.readProfesor(r.getAllKeys().get(i)).get("genero"),
+//                                r.readProfesor(r.getAllKeys().get(i)).get("fecha_nacimiento"),
+//                                r.readProfesor(r.getAllKeys().get(i)).get("telefono"),
+//                                r.readProfesor(r.getAllKeys().get(i)).get("tipo_licencia"));
+//                        alumnos.add(alum);
+//                    }
+//                }*/
+//        } catch (JedisException e) {
+//            System.out.println(e);
+//        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1315,11 +1381,29 @@ public class Main extends javax.swing.JFrame {
                 jd_editar_profesor.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
                 jd_editar_profesor.setResizable(false);//No se puede modificar el tamaño
                 jd_editar_profesor.setVisible(true);
-            } else {
-                
+            } else if (cb_modulo.getSelectedItem().toString().equals("Alumnos")) {
+                Alumno alum = alumni.get(jt_modulo.getSelectedRow());
+                System.out.println(jt_modulo.getSelectedRow());
+                tf_editar_alum_nombre.setText(alum.getNombre());
+                tf_editar_alum_apellido.setText(alum.getApellido());
+                if (alum.getGenero().equals("Masculino")) {
+                    rb_editar_alum_male.setSelected(true);
+                } else if (alum.getGenero().equals("Femenino")) {
+                    rb_editar_alum_female.setSelected(true);
+                }
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(alum.getFecha_nacimiento());
+                jdc_editar_alum_fecha.setDate(date);
+                tf_editar_alum_telefono.setText(alum.getTelefono());
+                cb_editar_alum_tipo_licencia.setSelectedItem(alum.getTipo_licencia());
+                //Abrir dialog
+                jd_editar_alumno.setModal(true);//Bloquear otras ventanas
+                jd_editar_alumno.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+                jd_editar_alumno.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+                jd_editar_alumno.setResizable(false);//No se puede modificar el tamaño
+                jd_editar_alumno.setVisible(true);
             }
         } catch (Exception e) {
-            
+            System.out.println(e);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -1344,13 +1428,24 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_moduloItemStateChanged
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-            Redis r = new Redis();
-            r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
-            profes.remove(jt_modulo.getSelectedRow());
-            JOptionPane.showMessageDialog(this, "Eliminó el profesor exitosamente");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrio un error al eliminar");
+        if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Profesores")) {
+            try {
+                Redis r = new Redis();
+                r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
+                profes.remove(jt_modulo.getSelectedRow());
+                JOptionPane.showMessageDialog(this, "Eliminó el profesor exitosamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Ocurrio un error al eliminar");
+            }
+        } else if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Alumnos")) {
+            try {
+                Redis r = new Redis();
+                r.deleteObject(alumni.get(jt_modulo.getSelectedRow()).getId());
+                alumni.remove(jt_modulo.getSelectedRow());
+                JOptionPane.showMessageDialog(this, "Eliminó el alumno exitosamente");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Ocurrio un error al eliminar");
+            }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -1361,7 +1456,7 @@ public class Main extends javax.swing.JFrame {
             Redis r = new Redis();
             r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
             profes.remove(jt_modulo.getSelectedRow());
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
         }
@@ -1384,8 +1479,8 @@ public class Main extends javax.swing.JFrame {
             //Insertar en Redis
             r.createProfesor(pro);
             //Cerrar ventana
-            jd_agregar_profesor.dispose();
-            JOptionPane.showMessageDialog(this, "Se agregó el profesor exitosamente.\n"
+            jd_editar_profesor.dispose();
+            JOptionPane.showMessageDialog(this, "Se modificó el profesor exitosamente.\n"
                     + "Su ID es: " + uniqueID);
             //Limpiar campos
             tf_editar_profesor_nombre.setText(null);
@@ -1492,7 +1587,82 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(JD_agregarClase, "El Pago no se pudo agregar correctamente.");
         }
     }//GEN-LAST:event_B_agregarPagoActionPerformed
-    
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        try {
+            Redis r = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            String genero = "";
+            if (rb_alum_male.isSelected()) {
+                genero = "Masculino";
+            } else {
+                genero = "Femenino";
+            }
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(jdc_alum_fecha_nacimiento.getDate());
+            Alumno alum = new Alumno(uniqueID, tf_alum_nombre.getText(), tf_alum_apellido.getText(), genero, date, tf_alum_telefono.getText(),
+                    cb_alum_tipo_licencia.getItemAt(cb_alum_tipo_licencia.getSelectedIndex()), "");
+            //Insertar en Redis
+            r.createAlumno(alum);
+            //Cerrar ventana
+            jd_agregar_alumno.dispose();
+            JOptionPane.showMessageDialog(this, "Se agregó el alumno exitosamente.\n"
+                    + "Su ID es: " + uniqueID);
+            //Limpiar campos
+            tf_alum_nombre.setText(null);
+            tf_alum_apellido.setText(null);
+            buttonGroup1.clearSelection();
+            jdc_alum_fecha_nacimiento.setDate(null);
+            tf_alum_telefono.setText(null);
+            cb_alum_tipo_licencia.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al crear el alumno");
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        String id = alumni.get(jt_modulo.getSelectedRow()).getId();
+        //Eliminar
+        try {
+            Redis r = new Redis();
+            r.deleteObject(alumni.get(jt_modulo.getSelectedRow()).getId());
+            alumni.remove(jt_modulo.getSelectedRow());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+        }
+        //Volver a agregar pero con valores nuevos
+        try {
+            Redis r = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            String genero = "";
+            if (rb_editar_alum_male.isSelected()) {
+                genero = "Masculino";
+            } else {
+                genero = "Femenino";
+            }
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String date = sdf.format(jdc_editar_alum_fecha.getDate());
+            Alumno alum = new Alumno(uniqueID, tf_editar_alum_nombre.getText(), tf_editar_alum_apellido.getText(),
+                    genero, date, tf_editar_alum_telefono.getText(),
+                    cb_editar_alum_tipo_licencia.getItemAt(cb_editar_alum_tipo_licencia.getSelectedIndex()), "");
+            //Insertar en Redis
+            r.createAlumno(alum);
+            //Cerrar ventana
+            jd_editar_alumno.dispose();
+            JOptionPane.showMessageDialog(this, "Se modificó el alumno exitosamente.\n"
+                    + "Su ID es: " + uniqueID);
+            //Limpiar campos
+            tf_editar_alum_nombre.setText(null);
+            tf_editar_alum_apellido.setText(null);
+            buttonGroup1.clearSelection();
+            jdc_editar_alum_fecha.setDate(null);
+            tf_editar_alum_telefono.setText(null);
+            cb_editar_alum_tipo_licencia.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+        }
+    }//GEN-LAST:event_jButton26ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1504,21 +1674,21 @@ public class Main extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                    
+
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Main.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Main.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Main.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Main.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -1580,6 +1750,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField TF_uso;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> cb_alum_tipo_licencia;
+    private javax.swing.JComboBox<String> cb_editar_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_profesor_categoria;
     private javax.swing.JComboBox<String> cb_modulo;
     private javax.swing.JComboBox<String> cb_prof_categoria;
@@ -1593,10 +1765,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
-    private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1635,10 +1803,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JDialog jd_agregar_alumno;
     private javax.swing.JDialog jd_agregar_profesor;
@@ -1646,11 +1810,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog jd_editar_profesor;
     private javax.swing.JDialog jd_login;
     private javax.swing.JDialog jd_modulo;
+    private com.toedter.calendar.JDateChooser jdc_alum_fecha_nacimiento;
+    private com.toedter.calendar.JDateChooser jdc_editar_alum_fecha;
     private com.toedter.calendar.JDateChooser jdc_editar_profesor_fecha;
     private com.toedter.calendar.JDateChooser jdc_prof_nacimiento;
     private javax.swing.JPanel jp_principal;
     private javax.swing.JTable jt_modulo;
     private javax.swing.JLabel lb_foto;
+    private javax.swing.JRadioButton rb_alum_male;
+    private javax.swing.JRadioButton rb_editar_alum_female;
+    private javax.swing.JRadioButton rb_editar_alum_male;
     private javax.swing.JRadioButton rb_editar_profesor_female;
     private javax.swing.JRadioButton rb_editar_profesor_male;
     private javax.swing.JRadioButton rb_prof_female;
@@ -1659,17 +1828,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner sp_editar_profesor_xp;
     private javax.swing.JSpinner sp_prof_sueldo;
     private javax.swing.JSpinner sp_prof_xp;
-    private javax.swing.JTextField tf_correo4;
-    private javax.swing.JTextField tf_correo5;
-    private javax.swing.JTextField tf_correo6;
-    private javax.swing.JTextField tf_correo7;
+    private javax.swing.JTextField tf_alum_apellido;
+    private javax.swing.JRadioButton tf_alum_female;
+    private javax.swing.JTextField tf_alum_nombre;
+    private javax.swing.JTextField tf_alum_telefono;
+    private javax.swing.JTextField tf_editar_alum_apellido;
+    private javax.swing.JTextField tf_editar_alum_nombre;
+    private javax.swing.JTextField tf_editar_alum_telefono;
     private javax.swing.JTextField tf_editar_profesor_apellido;
     private javax.swing.JTextField tf_editar_profesor_nombre;
     private javax.swing.JTextField tf_editar_profesor_telefono;
     private javax.swing.JPasswordField tf_login_password;
     private javax.swing.JTextField tf_login_username;
-    private javax.swing.JTextField tf_nombre2;
-    private javax.swing.JTextField tf_nombre3;
     private javax.swing.JTextField tf_prof_apellido;
     private javax.swing.JTextField tf_prof_nombre;
     private javax.swing.JTextField tf_prof_telefono;

@@ -18,19 +18,18 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
-    public Vehiculo(String ID, String idProfesor, String categoria, String tamano, String tarifa,
-            String consumo, String km_recorridos, String tipo_vehiculo) {
-        this.id = ID;
-        this.profesor_asignado = idProfesor;
+    public Vehiculo(String id, String profesor_asignado, String categoria, String tamano, String tarifa, String consumo, String km_recorridos, String tipo_vehiculo, String tipo) {
+        this.id = id;
+        this.profesor_asignado = "";
         this.categoria = categoria;
         this.tamano = tamano;
         this.tarifa = tarifa;
         this.consumo = consumo;
         this.km_recorridos = km_recorridos;
         this.tipo_vehiculo = tipo_vehiculo;
-        this.tipo = "Vehiculo";
+        this.tipo = tipo;
     }
-
+    
     // getters & setters    
     public String getID() {
         return id;

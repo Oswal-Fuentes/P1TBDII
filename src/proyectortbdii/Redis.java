@@ -78,7 +78,7 @@ public class Redis {
         userProperties.put("telefono", profesor.getTelefono());
         userProperties.put("sueldo", profesor.getSueldo());
         userProperties.put("experiencia", profesor.getExperiencia());
-        userProperties.put("categoria", profesor.getExperiencia());
+        userProperties.put("categoria", profesor.getCategoria());
         userProperties.put("vehiculo_asignado", profesor.getVehiculo_asignado());
         userProperties.put("tipo", profesor.getTipo());
 

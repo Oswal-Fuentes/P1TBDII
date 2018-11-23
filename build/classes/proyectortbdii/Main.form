@@ -1779,6 +1779,214 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JDialog" name="d_motocicleta">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="l_motocicleta" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="cb_motocicleta_cedula" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="b_entregarMotocicleta" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="l_motocicleta" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="cb_motocicleta_cedula" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="b_entregarMotocicleta" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="l_motocicleta">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="13" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Licencia Motocicleta"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_motocicleta_cedula">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="C&#xe9;dula"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="b_entregarMotocicleta">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Entregar"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="d_liviana">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="2" attributes="0">
+                              <Group type="102" alignment="2" attributes="0">
+                                  <Component id="cb_liviana_cedula" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cb_liviana_examenVisual" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cb_liviana_examenGeneral" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="b_entregarLiviana" alignment="2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="l_liviana" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="l_liviana" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cb_liviana_cedula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cb_liviana_examenVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cb_liviana_examenGeneral" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="b_entregarLiviana" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="l_liviana">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="13" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Licencia Liviana"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_liviana_cedula">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="C&#xe9;dula"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_liviana_examenVisual">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examen Visual"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_liviana_examenGeneral">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examen General"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="b_entregarLiviana">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Entregar"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="d_pesada">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="b_entregarPesada" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="l_pesada" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="2" attributes="0">
+                          <Component id="cb_pesada_cedula" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cb_pesada_examenVisual" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cb_pesada_examenGeneral" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cb_antecedentesPenales" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="l_pesada" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cb_pesada_cedula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cb_pesada_examenVisual" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cb_pesada_examenGeneral" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cb_antecedentesPenales" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="b_entregarPesada" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="l_pesada">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="13" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Licencia Pesada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_pesada_cedula">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="C&#xe9;dula"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_pesada_examenVisual">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examen Visual"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_pesada_examenGeneral">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examen General"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cb_antecedentesPenales">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Antecedentes Penales"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="b_entregarPesada">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Entregar"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="mb_menuPrincipal">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="m_menu">

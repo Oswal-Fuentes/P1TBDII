@@ -225,6 +225,23 @@ public class Main extends javax.swing.JFrame {
         l_practica_idVehiculo = new javax.swing.JLabel();
         cb_practica_idVehiculo = new javax.swing.JComboBox<>();
         b_agregarPractica = new javax.swing.JButton();
+        d_motocicleta = new javax.swing.JDialog();
+        l_motocicleta = new javax.swing.JLabel();
+        cb_motocicleta_cedula = new javax.swing.JCheckBox();
+        b_entregarMotocicleta = new javax.swing.JButton();
+        d_liviana = new javax.swing.JDialog();
+        l_liviana = new javax.swing.JLabel();
+        cb_liviana_cedula = new javax.swing.JCheckBox();
+        cb_liviana_examenVisual = new javax.swing.JCheckBox();
+        cb_liviana_examenGeneral = new javax.swing.JCheckBox();
+        b_entregarLiviana = new javax.swing.JButton();
+        d_pesada = new javax.swing.JDialog();
+        l_pesada = new javax.swing.JLabel();
+        cb_pesada_cedula = new javax.swing.JCheckBox();
+        cb_pesada_examenVisual = new javax.swing.JCheckBox();
+        cb_pesada_examenGeneral = new javax.swing.JCheckBox();
+        cb_antecedentesPenales = new javax.swing.JCheckBox();
+        b_entregarPesada = new javax.swing.JButton();
         jp_principal = new javax.swing.JPanel();
         mb_menuPrincipal = new javax.swing.JMenuBar();
         m_menu = new javax.swing.JMenu();
@@ -1261,6 +1278,132 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        l_motocicleta.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        l_motocicleta.setText("Licencia Motocicleta");
+
+        cb_motocicleta_cedula.setText("Cédula");
+
+        b_entregarMotocicleta.setText("Entregar");
+
+        javax.swing.GroupLayout d_motocicletaLayout = new javax.swing.GroupLayout(d_motocicleta.getContentPane());
+        d_motocicleta.getContentPane().setLayout(d_motocicletaLayout);
+        d_motocicletaLayout.setHorizontalGroup(
+            d_motocicletaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_motocicletaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(d_motocicletaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(l_motocicleta)
+                    .addComponent(cb_motocicleta_cedula)
+                    .addComponent(b_entregarMotocicleta))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        d_motocicletaLayout.setVerticalGroup(
+            d_motocicletaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_motocicletaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_motocicleta)
+                .addGap(18, 18, 18)
+                .addComponent(cb_motocicleta_cedula)
+                .addGap(18, 18, 18)
+                .addComponent(b_entregarMotocicleta)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        l_liviana.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        l_liviana.setText("Licencia Liviana");
+
+        cb_liviana_cedula.setText("Cédula");
+
+        cb_liviana_examenVisual.setText("Examen Visual");
+
+        cb_liviana_examenGeneral.setText("Examen General");
+
+        b_entregarLiviana.setText("Entregar");
+
+        javax.swing.GroupLayout d_livianaLayout = new javax.swing.GroupLayout(d_liviana.getContentPane());
+        d_liviana.getContentPane().setLayout(d_livianaLayout);
+        d_livianaLayout.setHorizontalGroup(
+            d_livianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_livianaLayout.createSequentialGroup()
+                .addGroup(d_livianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(d_livianaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(d_livianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addGroup(d_livianaLayout.createSequentialGroup()
+                                .addComponent(cb_liviana_cedula)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_liviana_examenVisual)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cb_liviana_examenGeneral))
+                            .addComponent(b_entregarLiviana)))
+                    .addGroup(d_livianaLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(l_liviana)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        d_livianaLayout.setVerticalGroup(
+            d_livianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_livianaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_liviana)
+                .addGap(18, 18, 18)
+                .addGroup(d_livianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_liviana_cedula)
+                    .addComponent(cb_liviana_examenVisual)
+                    .addComponent(cb_liviana_examenGeneral))
+                .addGap(18, 18, 18)
+                .addComponent(b_entregarLiviana)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        l_pesada.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        l_pesada.setText("Licencia Pesada");
+
+        cb_pesada_cedula.setText("Cédula");
+
+        cb_pesada_examenVisual.setText("Examen Visual");
+
+        cb_pesada_examenGeneral.setText("Examen General");
+
+        cb_antecedentesPenales.setText("Antecedentes Penales");
+
+        b_entregarPesada.setText("Entregar");
+
+        javax.swing.GroupLayout d_pesadaLayout = new javax.swing.GroupLayout(d_pesada.getContentPane());
+        d_pesada.getContentPane().setLayout(d_pesadaLayout);
+        d_pesadaLayout.setHorizontalGroup(
+            d_pesadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_pesadaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(d_pesadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(b_entregarPesada)
+                    .addComponent(l_pesada)
+                    .addGroup(d_pesadaLayout.createSequentialGroup()
+                        .addComponent(cb_pesada_cedula)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_pesada_examenVisual)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_pesada_examenGeneral)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_antecedentesPenales)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        d_pesadaLayout.setVerticalGroup(
+            d_pesadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_pesadaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_pesada)
+                .addGap(18, 18, 18)
+                .addGroup(d_pesadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_pesada_cedula)
+                    .addComponent(cb_pesada_examenVisual)
+                    .addComponent(cb_pesada_examenGeneral)
+                    .addComponent(cb_antecedentesPenales))
+                .addGap(18, 18, 18)
+                .addComponent(b_entregarPesada)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autoescuela");
 
@@ -2139,18 +2282,32 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField TF_tarifa_editar;
     private javax.swing.JButton b_agregarPractica;
     private javax.swing.JButton b_agregarTeorica;
+    private javax.swing.JButton b_entregarLiviana;
+    private javax.swing.JButton b_entregarMotocicleta;
+    private javax.swing.JButton b_entregarPesada;
     private javax.swing.JButton b_practica;
     private javax.swing.JButton b_teorica;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cb_alum_tipo_licencia;
+    private javax.swing.JCheckBox cb_antecedentesPenales;
     private javax.swing.JComboBox<String> cb_editar_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_profesor_categoria;
+    private javax.swing.JCheckBox cb_liviana_cedula;
+    private javax.swing.JCheckBox cb_liviana_examenGeneral;
+    private javax.swing.JCheckBox cb_liviana_examenVisual;
     private javax.swing.JComboBox<String> cb_modulo;
+    private javax.swing.JCheckBox cb_motocicleta_cedula;
+    private javax.swing.JCheckBox cb_pesada_cedula;
+    private javax.swing.JCheckBox cb_pesada_examenGeneral;
+    private javax.swing.JCheckBox cb_pesada_examenVisual;
     private javax.swing.JComboBox<String> cb_practica_idProfesor;
     private javax.swing.JComboBox<String> cb_practica_idVehiculo;
     private javax.swing.JComboBox<String> cb_prof_categoria;
     private javax.swing.JComboBox<String> cb_teorica_idProfesor;
+    private javax.swing.JDialog d_liviana;
+    private javax.swing.JDialog d_motocicleta;
+    private javax.swing.JDialog d_pesada;
     private javax.swing.JDialog d_practica;
     private javax.swing.JDialog d_teorica;
     private javax.swing.JButton jButton20;
@@ -2208,6 +2365,9 @@ public class Main extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jdc_prof_nacimiento;
     private javax.swing.JPanel jp_principal;
     private javax.swing.JTable jt_modulo;
+    private javax.swing.JLabel l_liviana;
+    private javax.swing.JLabel l_motocicleta;
+    private javax.swing.JLabel l_pesada;
     private javax.swing.JLabel l_practica;
     private javax.swing.JLabel l_practica_idAlumno;
     private javax.swing.JLabel l_practica_idProfesor;

@@ -13,6 +13,9 @@ public class Alumno {
 
     private String id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia, profesor_asignado, id_licencia, id_clase, tipo;
 
+    public Alumno() {
+    }
+    
     public Alumno(String id, String nombre, String apellido, String genero, String fecha_nacimiento, String telefono, String tipo_licencia, String profesor_asignado, String id_licencia, String id_clase) {
         this.id = id;
         this.nombre = nombre;

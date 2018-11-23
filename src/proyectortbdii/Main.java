@@ -77,24 +77,24 @@ public class Main extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         tf_login_username = new javax.swing.JTextField();
         jd_agregar_profesor = new javax.swing.JDialog();
-        jdc_editar_profesor_fecha1 = new com.toedter.calendar.JDateChooser();
-        tf_editar_profesor_apellido1 = new javax.swing.JTextField();
-        tf_editar_profesor_telefono1 = new javax.swing.JTextField();
-        jLabel49 = new javax.swing.JLabel();
-        sp_editar_profesor_sueldo1 = new javax.swing.JSpinner();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
-        sp_editar_profesor_xp1 = new javax.swing.JSpinner();
-        jLabel53 = new javax.swing.JLabel();
+        tf_prof_nombre2 = new javax.swing.JTextField();
+        tf_prof_apellido2 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jButton23 = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
+        rb_prof_male = new javax.swing.JRadioButton();
+        rb_prof_female = new javax.swing.JRadioButton();
+        jdc_prof_nacimiento = new com.toedter.calendar.JDateChooser();
+        tf_prof_telefono = new javax.swing.JTextField();
+        sp_prof_sueldo = new javax.swing.JSpinner();
+        jLabel58 = new javax.swing.JLabel();
+        sp_prof_xp = new javax.swing.JSpinner();
         jLabel36 = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
-        cb_editar_profesor_categoria1 = new javax.swing.JComboBox<>();
-        jButton29 = new javax.swing.JButton();
-        jLabel55 = new javax.swing.JLabel();
-        rb_editar_profesor_male1 = new javax.swing.JRadioButton();
-        rb_editar_profesor_female1 = new javax.swing.JRadioButton();
-        tf_editar_profesor_nombre1 = new javax.swing.JTextField();
+        cb_prof_categoria = new javax.swing.JComboBox<>();
         jd_editar_profesor = new javax.swing.JDialog();
         tf_editar_profesor_nombre = new javax.swing.JTextField();
         tf_editar_profesor_apellido = new javax.swing.JTextField();
@@ -146,8 +146,6 @@ public class Main extends javax.swing.JFrame {
         cb_editar_alum_tipo_licencia = new javax.swing.JComboBox<>();
         JD_agregarVehiculo = new javax.swing.JDialog();
         L_vehiculo = new javax.swing.JLabel();
-        L_uso = new javax.swing.JLabel();
-        TF_uso = new javax.swing.JTextField();
         L_tamano = new javax.swing.JLabel();
         TF_tamano = new javax.swing.JTextField();
         L_tarifa = new javax.swing.JLabel();
@@ -159,6 +157,19 @@ public class Main extends javax.swing.JFrame {
         L_tipoVehiculo = new javax.swing.JLabel();
         CB_tipoVehiculo = new javax.swing.JComboBox<>();
         B_agregarVehiculo = new javax.swing.JButton();
+        JD_editar_vehiculo = new javax.swing.JDialog();
+        L_vehiculo1 = new javax.swing.JLabel();
+        L_tamano1 = new javax.swing.JLabel();
+        TF_tamano_editar = new javax.swing.JTextField();
+        L_tarifa1 = new javax.swing.JLabel();
+        TF_tarifa_editar = new javax.swing.JTextField();
+        L_consumo1 = new javax.swing.JLabel();
+        TF_consumo_editar = new javax.swing.JTextField();
+        L_kmRecorridos1 = new javax.swing.JLabel();
+        TF_kmRecorridos_editar = new javax.swing.JTextField();
+        L_tipoVehiculo1 = new javax.swing.JLabel();
+        CB_tipoVehiculo_editar = new javax.swing.JComboBox<>();
+        B_agregarVehiculo1 = new javax.swing.JButton();
         JD_agregarClase = new javax.swing.JDialog();
         L_clase = new javax.swing.JLabel();
         L_idProfesor = new javax.swing.JLabel();
@@ -289,34 +300,36 @@ public class Main extends javax.swing.JFrame {
 
         jd_agregar_profesor.setTitle("Agregar Profesor");
 
-        jLabel49.setText("Nombre");
+        jLabel38.setText("Nombre");
 
-        jLabel50.setText("Apellido");
+        jLabel39.setText("Apellido");
 
-        jLabel51.setText("Años de Experiencia");
+        jLabel40.setText("Fecha de Nacimiento");
 
-        jLabel52.setText("Fecha de Nacimiento");
+        jLabel41.setText("Telefono");
 
-        jLabel53.setText("Telefono");
+        jLabel56.setText("Sueldo");
 
-        jLabel36.setText("Categoria");
-
-        jLabel54.setText("Sueldo");
-
-        cb_editar_profesor_categoria1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada", "Biciclo" }));
-
-        jButton29.setText("Guardar cambios");
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
+        jButton23.setText("Agregar");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
+                jButton23ActionPerformed(evt);
             }
         });
 
-        jLabel55.setText("Genero");
+        jLabel57.setText("Genero");
 
-        rb_editar_profesor_male1.setText("Masculino");
+        buttonGroup1.add(rb_prof_male);
+        rb_prof_male.setText("Masculino");
 
-        rb_editar_profesor_female1.setText("Femenino");
+        buttonGroup1.add(rb_prof_female);
+        rb_prof_female.setText("Femenino");
+
+        jLabel58.setText("Años de Experiencia");
+
+        jLabel36.setText("Categoria");
+
+        cb_prof_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviana", "Pesada", "Biciclo" }));
 
         javax.swing.GroupLayout jd_agregar_profesorLayout = new javax.swing.GroupLayout(jd_agregar_profesor.getContentPane());
         jd_agregar_profesor.getContentPane().setLayout(jd_agregar_profesorLayout);
@@ -324,78 +337,76 @@ public class Main extends javax.swing.JFrame {
             jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_agregar_profesorLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
                         .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel51)
-                            .addComponent(jLabel50)
-                            .addComponent(jLabel52)
-                            .addComponent(jLabel53)
-                            .addComponent(jLabel54)
-                            .addComponent(jLabel55)
-                            .addComponent(jLabel49))
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel56)
+                            .addComponent(jLabel57)
+                            .addComponent(jLabel38))
                         .addGap(18, 18, 18)
                         .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tf_editar_profesor_nombre1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                                .addComponent(tf_editar_profesor_apellido1)
+                                .addComponent(tf_prof_nombre2, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                                .addComponent(tf_prof_apellido2)
                                 .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
-                                    .addComponent(rb_editar_profesor_male1)
+                                    .addComponent(rb_prof_male)
                                     .addGap(18, 18, 18)
-                                    .addComponent(rb_editar_profesor_female1))
-                                .addComponent(jdc_editar_profesor_fecha1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_editar_profesor_telefono1))
-                            .addComponent(sp_editar_profesor_sueldo1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sp_editar_profesor_xp1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(rb_prof_female))
+                                .addComponent(jdc_prof_nacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_prof_telefono))
+                            .addComponent(sp_prof_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sp_prof_xp, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
                         .addComponent(jLabel36)
                         .addGap(18, 18, 18)
-                        .addComponent(cb_editar_profesor_categoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_prof_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85)))
                 .addGap(60, 60, 60))
-            .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_agregar_profesorLayout.setVerticalGroup(
             jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_agregar_profesorLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_editar_profesor_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel49))
+                    .addComponent(tf_prof_nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel50)
-                    .addComponent(tf_editar_profesor_apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel39)
+                    .addComponent(tf_prof_apellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel55)
-                    .addComponent(rb_editar_profesor_male1)
-                    .addComponent(rb_editar_profesor_female1))
+                    .addComponent(jLabel57)
+                    .addComponent(rb_prof_male)
+                    .addComponent(rb_prof_female))
                 .addGap(22, 22, 22)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jdc_editar_profesor_fecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jdc_prof_nacimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel53)
-                    .addComponent(tf_editar_profesor_telefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel41)
+                    .addComponent(tf_prof_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel54)
-                    .addComponent(sp_editar_profesor_sueldo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel56)
+                    .addComponent(sp_prof_sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sp_editar_profesor_xp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51))
+                    .addComponent(sp_prof_xp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58))
                 .addGap(18, 18, 18)
-                .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cb_editar_profesor_categoria1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jd_agregar_profesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addComponent(cb_prof_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
 
@@ -700,8 +711,6 @@ public class Main extends javax.swing.JFrame {
         L_vehiculo.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         L_vehiculo.setText("Vehículo");
 
-        L_uso.setText("Uso");
-
         L_tamano.setText("Tamaño");
 
         L_tarifa.setText("Tarifa");
@@ -712,7 +721,7 @@ public class Main extends javax.swing.JFrame {
 
         L_tipoVehiculo.setText("Tipo de Vehículo");
 
-        CB_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Liviano", "Pesado" }));
+        CB_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Convertible", "Sedan", "Deportivo", "Jeep", "Bus", "Camion", "Motocicleta", "Moto taxi" }));
 
         B_agregarVehiculo.setText("Agregar");
         B_agregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
@@ -731,7 +740,6 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(L_vehiculo)
                     .addGroup(JD_agregarVehiculoLayout.createSequentialGroup()
                         .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(L_uso)
                             .addComponent(L_tamano)
                             .addComponent(L_tarifa)
                             .addComponent(L_consumo)
@@ -742,23 +750,18 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(TF_consumo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TF_tarifa, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TF_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TF_uso, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(CB_tipoVehiculo, javax.swing.GroupLayout.Alignment.LEADING, 0, 150, Short.MAX_VALUE)
                                 .addComponent(TF_kmRecorridos, javax.swing.GroupLayout.Alignment.LEADING))))
                     .addComponent(B_agregarVehiculo))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         JD_agregarVehiculoLayout.setVerticalGroup(
             JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JD_agregarVehiculoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(L_vehiculo)
-                .addGap(23, 23, 23)
-                .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(L_uso)
-                    .addComponent(TF_uso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addGroup(JD_agregarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_tamano)
                     .addComponent(TF_tamano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -781,6 +784,84 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(B_agregarVehiculo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        L_vehiculo1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        L_vehiculo1.setText("Vehículo");
+
+        L_tamano1.setText("Tamaño");
+
+        L_tarifa1.setText("Tarifa");
+
+        L_consumo1.setText("Consumo");
+
+        L_kmRecorridos1.setText("Kilómetros Recorridos");
+
+        L_tipoVehiculo1.setText("Tipo de Vehículo");
+
+        CB_tipoVehiculo_editar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Convertible", "Sedan", "Deportivo", "Jeep", "Bus", "Camion", "Motocicleta", "Moto taxi" }));
+
+        B_agregarVehiculo1.setText("Guardar Cambios");
+        B_agregarVehiculo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_agregarVehiculo1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_editar_vehiculoLayout = new javax.swing.GroupLayout(JD_editar_vehiculo.getContentPane());
+        JD_editar_vehiculo.getContentPane().setLayout(JD_editar_vehiculoLayout);
+        JD_editar_vehiculoLayout.setHorizontalGroup(
+            JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_editar_vehiculoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_vehiculo1)
+                    .addGroup(JD_editar_vehiculoLayout.createSequentialGroup()
+                        .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(L_tamano1)
+                            .addComponent(L_tarifa1)
+                            .addComponent(L_consumo1)
+                            .addComponent(L_kmRecorridos1)
+                            .addComponent(L_tipoVehiculo1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_consumo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_tarifa_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TF_tamano_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(CB_tipoVehiculo_editar, javax.swing.GroupLayout.Alignment.LEADING, 0, 150, Short.MAX_VALUE)
+                                .addComponent(TF_kmRecorridos_editar, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addComponent(B_agregarVehiculo1))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+        JD_editar_vehiculoLayout.setVerticalGroup(
+            JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_editar_vehiculoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(L_vehiculo1)
+                .addGap(20, 20, 20)
+                .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_tamano1)
+                    .addComponent(TF_tamano_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_tarifa1)
+                    .addComponent(TF_tarifa_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_consumo1)
+                    .addComponent(TF_consumo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_kmRecorridos1)
+                    .addComponent(TF_kmRecorridos_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JD_editar_vehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_tipoVehiculo1)
+                    .addComponent(CB_tipoVehiculo_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(B_agregarVehiculo1)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         L_clase.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -1195,9 +1276,6 @@ public class Main extends javax.swing.JFrame {
                             } else if (entry.getKey().equals("categoria")) {
                                 categoria = entry.getValue();
                                 pro.setCategoria(categoria);
-                            } else if (entry.getKey().equals("vehiculo_asignado")) {
-                                vehiculo_asignado = entry.getValue();
-                                pro.setVehiculo_asignado(vehiculo_asignado);
                             }
                         }
                         profes.add(pro);
@@ -1205,12 +1283,12 @@ public class Main extends javax.swing.JFrame {
                     jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{},
                             new String[]{
-                                "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia", "Categoria", "Vehiculo Asignado"
+                                "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia", "Categoria"
                             }
                     ));
                     for (Profesor p : profes) {
                         Object row[] = {p.getId(), p.getNombre(), p.getApellido(), p.getGenero(), p.getFecha_nacimiento(),
-                            p.getTelefono(), p.getSueldo(), p.getExperiencia(), p.getCategoria(), p.getVehiculo_asignado()};
+                            p.getTelefono(), p.getSueldo(), p.getExperiencia(), p.getCategoria()};
                         DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
                         m.addRow(row);
                         jt_modulo.setModel(m);
@@ -1233,7 +1311,7 @@ public class Main extends javax.swing.JFrame {
                         Alumno alum = new Alumno();
                         for (Map.Entry<String, String> entry : datos.entrySet()) {
                             //System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
-                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "", profesor_asignado = "";
+                            String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "", profesor_asignado = "", id_licencia, id_clase;
                             if (entry.getKey().equals("id")) {
                                 id = entry.getValue();
                                 alum.setId(id);
@@ -1258,6 +1336,12 @@ public class Main extends javax.swing.JFrame {
                             } else if (entry.getKey().equals("profesor_asignado")) {
                                 profesor_asignado = entry.getValue();
                                 alum.setProfesor_asignado(profesor_asignado);
+                            } else if (entry.getKey().equals("id_licencia")) {
+                                id_licencia = entry.getValue();
+                                alum.setProfesor_asignado(id_licencia);
+                            } else if (entry.getKey().equals("id_clase")) {
+                                id_clase = entry.getValue();
+                                alum.setProfesor_asignado(id_clase);
                             }
                         }
                         alumni.add(alum);
@@ -1265,12 +1349,72 @@ public class Main extends javax.swing.JFrame {
                     jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
                             new Object[][]{},
                             new String[]{
-                                "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Tipo Licencia", "Profesor Asignado"
+                                "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Tipo Licencia", "Profesor Asignado", "ID Licencia", "ID Clase"
                             }
                     ));
                     for (Alumno a : alumni) {
                         Object row[] = {a.getId(), a.getNombre(), a.getApellido(), a.getGenero(), a.getFecha_nacimiento(),
-                            a.getTelefono(), a.getTipo_licencia(), a.getProfesor_asignado()};
+                            a.getTelefono(), a.getTipo_licencia(), a.getProfesor_asignado(), a.getId_licencia(), a.getId_clase()};
+                        DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
+                        m.addRow(row);
+                        jt_modulo.setModel(m);
+                    }
+                }
+            } catch (JedisException e) {
+                System.out.println(e);
+            }
+        } else if (cb_modulo.getSelectedItem().toString().equals("Vehiculos")) {
+            vehiculos.clear();
+            Redis r = new Redis();
+            ArrayList<String> keys = new ArrayList();
+            keys = r.getAllKeys();
+            try {
+                for (int i = 0; i < keys.size(); i++) {
+                    String tipo = r.getTipo(keys.get(i));
+                    if (tipo.equals("Vehiculo")) {
+                        Map<String, String> datos = new HashMap<String, String>();
+                        datos = r.readObject(keys.get(i));
+                        Vehiculo vehiculo = new Vehiculo();
+                        for (Map.Entry<String, String> entry : datos.entrySet()) {
+                            //System.out.println("clave=" + entry.getKey() + ", valor=" + entry.getValue());
+                            String id = "", id_profesor = "", tipo_licencia = "", tamano = "", tarifa = "", consumo = "", km_recorridos = "", tipo_vehiculo = "";
+                            if (entry.getKey().equals("id")) {
+                                id = entry.getValue();
+                                vehiculo.setId(id);
+                            } else if (entry.getKey().equals("id_profesor")) {
+                                id_profesor = entry.getValue();
+                                vehiculo.setId_profesor(id_profesor);
+                            } else if (entry.getKey().equals("tipo_licencia")) {
+                                tipo_licencia = entry.getValue();
+                                vehiculo.setTipo_licencia(tipo_licencia);
+                            } else if (entry.getKey().equals("tamano")) {
+                                tamano = entry.getValue();
+                                vehiculo.setTamano(tamano);
+                            } else if (entry.getKey().equals("tarifa")) {
+                                tarifa = entry.getValue();
+                                vehiculo.setTarifa(tarifa);
+                            } else if (entry.getKey().equals("consumo")) {
+                                consumo = entry.getValue();
+                                vehiculo.setConsumo(consumo);
+                            } else if (entry.getKey().equals("km_recorridos")) {
+                                km_recorridos = entry.getValue();
+                                vehiculo.setKm_recorridos(km_recorridos);
+                            } else if (entry.getKey().equals("tipo_vehiculo")) {
+                                tipo_vehiculo = entry.getValue();
+                                vehiculo.setTipo_vehiculo(tipo_vehiculo);
+                            }
+                        }
+                        vehiculos.add(vehiculo);
+                    }
+                    jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{},
+                            new String[]{
+                                "ID", "ID Profesor", "Tipo Licencia", "Tamaño", "Tarifa", "Consumo", "KM Recorridos", "Tipo Vehiculo"
+                            }
+                    ));
+                    for (Vehiculo a : vehiculos) {
+                        Object row[] = {a.getId(), a.getId_profesor(), a.getTipo_licencia(), a.getTamano(), a.getTarifa(),
+                            a.getConsumo(), a.getKm_recorridos(), a.getTipo_vehiculo()};
                         DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
                         m.addRow(row);
                         jt_modulo.setModel(m);
@@ -1280,47 +1424,6 @@ public class Main extends javax.swing.JFrame {
                 System.out.println(e);
             }
         }
-//            Map<String, String> datos = new HashMap<String, String>();
-//            datos = r.readObject(keys.get(i));
-//            for (Map.Entry<String, String> entry : datos.entrySet()) {
-//                String id = "", nombre = "", apellido = "", genero = "", fecha_nacimiento = "", telefono = "", tipo_licencia = "";
-//                if (entry.getKey().equals("id")) {
-//                    id = entry.getValue();
-//                } else if (entry.getKey().equals("nombre")) {
-//                    nombre = entry.getValue();
-//                } else if (entry.getKey().equals("apellido")) {
-//                    apellido = entry.getValue();
-//                } else if (entry.getKey().equals("genero")) {
-//                    genero = entry.getValue();
-//                } else if (entry.getKey().equals("fecha_nacimiento")) {
-//                    fecha_nacimiento = entry.getValue();
-//                } else if (entry.getKey().equals("telefono")) {
-//                    telefono = entry.getValue();
-//                } else if (entry.getKey().equals("tipo_licencia")) {
-//                    tipo_licencia = entry.getValue();
-//                }
-//                Alumno alu = new Alumno(id, nombre, apellido, genero, fecha_nacimiento, telefono, tipo_licencia);
-//                alumni.add(alu);
-//            }
-//        }
-//        Redis r = new Redis();
-//        ArrayList<Alumno> alumnos = new ArrayList();
-//        try {
-//            /*for (int i = 0; i < r.getAllKeys().size(); i++) {
-//                    if (r.readProfesor(r.getAllKeys().get(i)).get("tipo").equals("Alumno")) {
-//                        Alumno alum = new Alumno(r.readProfesor(r.getAllKeys().get(i)).get("id"),
-//                                r.readProfesor(r.getAllKeys().get(i)).get("nombre"),
-//                                r.readProfesor(r.getAllKeys().get(i)).get("apellido"),
-//                                r.readProfesor(r.getAllKeys().get(i)).get("genero"),
-//                                r.readProfesor(r.getAllKeys().get(i)).get("fecha_nacimiento"),
-//                                r.readProfesor(r.getAllKeys().get(i)).get("telefono"),
-//                                r.readProfesor(r.getAllKeys().get(i)).get("tipo_licencia"));
-//                        alumnos.add(alum);
-//                    }
-//                }*/
-//        } catch (JedisException e) {
-//            System.out.println(e);
-//        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1369,18 +1472,17 @@ public class Main extends javax.swing.JFrame {
             } else if (cb_modulo.getSelectedItem().toString().equals("Vehiculos")) {
                 Vehiculo vehiculo = vehiculos.get(jt_modulo.getSelectedRow());
                 System.out.println(jt_modulo.getSelectedRow());
-                CB_Uso_editar.setSelectedItem(vehiculo.getCategoria());
                 TF_tamano_editar.setText(vehiculo.getTamano());
                 TF_tarifa_editar.setText(vehiculo.getTarifa());
                 TF_consumo_editar.setText(vehiculo.getConsumo());
                 TF_kmRecorridos_editar.setText(vehiculo.getKm_recorridos());
                 CB_tipoVehiculo_editar.setSelectedItem(vehiculo.getTipo_vehiculo());
                 //Abrir dialog
-                JD_modificarVehiculo.setModal(true);//Bloquear otras ventanas
-                JD_modificarVehiculo.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
-                JD_modificarVehiculo.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
-                JD_modificarVehiculo.setResizable(false);//No se puede modificar el tamaño
-                JD_modificarVehiculo.setVisible(true);
+                JD_editar_vehiculo.setModal(true);//Bloquear otras ventanas
+                JD_editar_vehiculo.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
+                JD_editar_vehiculo.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
+                JD_editar_vehiculo.setResizable(false);//No se puede modificar el tamaño
+                JD_editar_vehiculo.setVisible(true);
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -1392,15 +1494,23 @@ public class Main extends javax.swing.JFrame {
             jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
                     new Object[][]{},
                     new String[]{
-                        "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia", "Categoria", "Vehiculo Asignado"
+                        "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Sueldo", "Años de Experiencia", "Categoria"
                     }
             ));
             alumni.clear();
-        } else {
+        } else if (cb_modulo.getSelectedItem().toString().equals("Alumnos")) {
             jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
                     new Object[][]{},
                     new String[]{
-                        "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Tipo Licencia"
+                        "ID", "Nombre", "Apellido", "Genero", "Fecha de Nacimiento", "Telefono", "Tipo Licencia", "Profesor Asignado", "ID Licencia", "ID Clase"
+                    }
+            ));
+            profes.clear();
+        } else if (cb_modulo.getSelectedItem().toString().equals("Vehiculos")) {
+            jt_modulo.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "ID", "ID Profesor", "Tipo Licencia", "Tamaño", "Tarifa", "Consumo", "KM Recorridos", "Tipo Vehiculo"
                     }
             ));
             profes.clear();
@@ -1408,7 +1518,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_moduloItemStateChanged
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Profesores")) {
+        if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Profesores")) {
             try {
                 Redis r = new Redis();
                 r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
@@ -1429,7 +1539,7 @@ public class Main extends javax.swing.JFrame {
         } else if (cb_modulo.getItemAt(cb_modulo.getSelectedIndex()).equals("Vehiculos")) {
             try {
                 Redis r = new Redis();
-                r.deleteObject(vehiculos.get(jt_modulo.getSelectedRow()).getID());
+                r.deleteObject(vehiculos.get(jt_modulo.getSelectedRow()).getId());
                 vehiculos.remove(jt_modulo.getSelectedRow());
                 JOptionPane.showMessageDialog(this, "Eliminó el vehiculo exitosamente");
             } catch (Exception e) {
@@ -1464,7 +1574,7 @@ public class Main extends javax.swing.JFrame {
             Profesor pro = new Profesor(uniqueID, tf_editar_profesor_nombre.getText(), tf_editar_profesor_apellido.getText(),
                     genero, date, tf_editar_profesor_telefono.getText(),
                     sp_editar_profesor_sueldo.getValue().toString(), sp_editar_profesor_xp.getValue().toString(),
-                    cb_editar_profesor_categoria.getItemAt(cb_editar_profesor_categoria.getSelectedIndex()), "");
+                    cb_editar_profesor_categoria.getItemAt(cb_editar_profesor_categoria.getSelectedIndex()));
             //Insertar en Redis
             r.createProfesor(pro);
             //Cerrar ventana
@@ -1516,15 +1626,14 @@ public class Main extends javax.swing.JFrame {
         try {
             Redis R = new Redis();
             String uniqueID = UUID.randomUUID().toString();
-            Vehiculo V = new Vehiculo(uniqueID, "", TF_uso.getText(),
+            Vehiculo V = new Vehiculo(uniqueID, "",
                     TF_tamano.getText(), TF_tarifa.getText(),
                     TF_consumo.getText(), TF_kmRecorridos.getText(),
-                    CB_tipoVehiculo.getItemAt(CB_tipoVehiculo.getSelectedIndex()), "Vehiculo");
+                    CB_tipoVehiculo.getItemAt(CB_tipoVehiculo.getSelectedIndex()));
             R.createVehiculo(V);
             JOptionPane.showMessageDialog(JD_agregarVehiculo,
                     "El Vehículo (" + uniqueID + ") se agregó correctamente.");
             JD_agregarVehiculo.dispose();
-            TF_uso.setText(null);
             TF_tamano.setText(null);
             TF_tarifa.setText(null);
             TF_consumo.setText(null);
@@ -1590,7 +1699,7 @@ public class Main extends javax.swing.JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String date = sdf.format(jdc_alum_fecha_nacimiento.getDate());
             Alumno alum = new Alumno(uniqueID, tf_alum_nombre.getText(), tf_alum_apellido.getText(), genero, date, tf_alum_telefono.getText(),
-                    cb_alum_tipo_licencia.getItemAt(cb_alum_tipo_licencia.getSelectedIndex()), "");
+                    cb_alum_tipo_licencia.getItemAt(cb_alum_tipo_licencia.getSelectedIndex()), "", "", "");
             //Insertar en Redis
             r.createAlumno(alum);
             //Cerrar ventana
@@ -1633,7 +1742,7 @@ public class Main extends javax.swing.JFrame {
             String date = sdf.format(jdc_editar_alum_fecha.getDate());
             Alumno alum = new Alumno(uniqueID, tf_editar_alum_nombre.getText(), tf_editar_alum_apellido.getText(),
                     genero, date, tf_editar_alum_telefono.getText(),
-                    cb_editar_alum_tipo_licencia.getItemAt(cb_editar_alum_tipo_licencia.getSelectedIndex()), "");
+                    cb_editar_alum_tipo_licencia.getItemAt(cb_editar_alum_tipo_licencia.getSelectedIndex()), "", "", "");
             //Insertar en Redis
             r.createAlumno(alum);
             //Cerrar ventana
@@ -1652,52 +1761,71 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        String id = profes.get(jt_modulo.getSelectedRow()).getId();
-        //Eliminar
+    private void B_agregarVehiculo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_agregarVehiculo1ActionPerformed
         try {
             Redis r = new Redis();
-            r.deleteObject(profes.get(jt_modulo.getSelectedRow()).getId());
-            profes.remove(jt_modulo.getSelectedRow());
-
+            r.deleteObject(vehiculos.get(jt_modulo.getSelectedRow()).getId());
+            vehiculos.remove(jt_modulo.getSelectedRow());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al editar");
         }
-        //Volver a agregar pero con valores nuevos
+        try {
+            Redis R = new Redis();
+            String uniqueID = UUID.randomUUID().toString();
+            Vehiculo V = new Vehiculo(uniqueID, "",
+                    TF_tamano_editar.getText(), TF_tarifa_editar.getText(),
+                    TF_consumo_editar.getText(), TF_kmRecorridos_editar.getText(),
+                    CB_tipoVehiculo_editar.getItemAt(CB_tipoVehiculo_editar.getSelectedIndex()));
+            R.createVehiculo(V);
+            JOptionPane.showMessageDialog(JD_agregarVehiculo,
+                    "El Vehículo (" + uniqueID + ") se edito correctamente.");
+            JD_editar_vehiculo.dispose();
+            TF_tamano_editar.setText(null);
+            TF_tarifa_editar.setText(null);
+            TF_consumo_editar.setText(null);
+            TF_kmRecorridos_editar.setText(null);
+            CB_tipoVehiculo_editar.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(JD_agregarVehiculo, "El Vehículo no se pudo editar");
+        }
+    }//GEN-LAST:event_B_agregarVehiculo1ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         try {
             Redis r = new Redis();
             String uniqueID = UUID.randomUUID().toString();
             String genero = "";
-            if (rb_editar_profesor_male.isSelected()) {
+            if (rb_prof_male.isSelected()) {
                 genero = "Masculino";
             } else {
                 genero = "Femenino";
             }
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String date = sdf.format(jdc_editar_profesor_fecha.getDate());
-            Profesor pro = new Profesor(uniqueID, tf_editar_profesor_nombre.getText(), tf_editar_profesor_apellido.getText(),
-                    genero, date, tf_editar_profesor_telefono.getText(),
-                    sp_editar_profesor_sueldo.getValue().toString(), sp_editar_profesor_xp.getValue().toString(),
-                    cb_editar_profesor_categoria.getItemAt(cb_editar_profesor_categoria.getSelectedIndex()), "");
+            String date = sdf.format(jdc_prof_nacimiento.getDate());
+            Profesor pro = new Profesor(uniqueID, tf_prof_nombre2.getText(), tf_prof_apellido2.getText(),
+                    genero, date, tf_prof_telefono.getText(),
+                    sp_prof_sueldo.getValue().toString(), sp_prof_xp.getValue().toString(),
+                    cb_prof_categoria.getItemAt(cb_prof_categoria.getSelectedIndex()).toString());
             //Insertar en Redis
             r.createProfesor(pro);
             //Cerrar ventana
-            jd_editar_profesor.dispose();
-            JOptionPane.showMessageDialog(this, "Se modificó el profesor exitosamente.\n"
+            jd_agregar_profesor.dispose();
+            JOptionPane.showMessageDialog(this, "Se agregó el profesor exitosamente.\n"
                     + "Su ID es: " + uniqueID);
             //Limpiar campos
-            tf_editar_profesor_nombre.setText(null);
-            tf_editar_profesor_apellido.setText(null);
+            tf_prof_nombre2.setText(null);
+            tf_prof_apellido2.setText(null);
             buttonGroup1.clearSelection();
-            jdc_editar_profesor_fecha.setDate(null);
-            tf_editar_profesor_telefono.setText(null);
-            sp_editar_profesor_sueldo.setValue(0);
-            sp_editar_profesor_xp.setValue(0);
-            cb_editar_profesor_categoria.setSelectedIndex(0);
+            jdc_prof_nacimiento.setDate(null);
+            tf_prof_telefono.setText(null);
+            sp_prof_sueldo.setValue(0);
+            sp_prof_xp.setValue(0);
+            cb_prof_categoria.setSelectedItem(0);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrio un error al actualizar");
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this, "Ocurrio un error al crear el profesor");
         }
-    }//GEN-LAST:event_jButton29ActionPerformed
+    }//GEN-LAST:event_jButton23ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1743,15 +1871,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton B_agregarClase;
     private javax.swing.JButton B_agregarPago;
     private javax.swing.JButton B_agregarVehiculo;
+    private javax.swing.JButton B_agregarVehiculo1;
     private javax.swing.JComboBox<String> CB_agregarClase_tipoClase;
     private javax.swing.JComboBox<String> CB_tipoVehiculo;
+    private javax.swing.JComboBox<String> CB_tipoVehiculo_editar;
     private javax.swing.JDialog JD_agregarClase;
     private javax.swing.JDialog JD_agregarPago;
     private javax.swing.JDialog JD_agregarVehiculo;
+    private javax.swing.JDialog JD_editar_vehiculo;
     private javax.swing.JLabel L_agregarClase_tipoClase;
     private javax.swing.JLabel L_agregarPago_idAlumno;
     private javax.swing.JLabel L_clase;
     private javax.swing.JLabel L_consumo;
+    private javax.swing.JLabel L_consumo1;
     private javax.swing.JLabel L_costoEnsenanzaPractica;
     private javax.swing.JLabel L_costoEnsenanzaTeorica;
     private javax.swing.JLabel L_costoMatricula;
@@ -1761,17 +1893,22 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel L_idAlumno;
     private javax.swing.JLabel L_idProfesor;
     private javax.swing.JLabel L_kmRecorridos;
+    private javax.swing.JLabel L_kmRecorridos1;
     private javax.swing.JLabel L_pago;
     private javax.swing.JLabel L_tamano;
+    private javax.swing.JLabel L_tamano1;
     private javax.swing.JLabel L_tarifa;
+    private javax.swing.JLabel L_tarifa1;
     private javax.swing.JLabel L_tipoVehiculo;
-    private javax.swing.JLabel L_uso;
+    private javax.swing.JLabel L_tipoVehiculo1;
     private javax.swing.JLabel L_vehiculo;
+    private javax.swing.JLabel L_vehiculo1;
     private javax.swing.JMenuItem MI_agregarClase;
     private javax.swing.JMenuItem MI_agregarPago;
     private javax.swing.JMenuItem MI_agregarVehiculo;
     private javax.swing.JTextField TF_agregarPago_idAlumno;
     private javax.swing.JTextField TF_consumo;
+    private javax.swing.JTextField TF_consumo_editar;
     private javax.swing.JTextField TF_costoEnsenanzaPractica;
     private javax.swing.JTextField TF_costoEnsenanzaTeorica;
     private javax.swing.JTextField TF_costoMatricula;
@@ -1781,29 +1918,42 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField TF_idAlumno;
     private javax.swing.JTextField TF_idProfesor;
     private javax.swing.JTextField TF_kmRecorridos;
+    private javax.swing.JTextField TF_kmRecorridos_editar;
     private javax.swing.JTextField TF_tamano;
+    private javax.swing.JTextField TF_tamano_editar;
     private javax.swing.JTextField TF_tarifa;
-    private javax.swing.JTextField TF_uso;
+    private javax.swing.JTextField TF_tarifa_editar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cb_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_profesor_categoria;
-    private javax.swing.JComboBox<String> cb_editar_profesor_categoria1;
     private javax.swing.JComboBox<String> cb_modulo;
+    private javax.swing.JComboBox<String> cb_prof_categoria;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1818,6 +1968,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -1825,13 +1980,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -1842,6 +1993,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JDialog jd_agregar_alumno;
     private javax.swing.JDialog jd_agregar_profesor;
+    private javax.swing.JDialog jd_agregar_profesor1;
+    private javax.swing.JDialog jd_agregar_profesor2;
     private javax.swing.JDialog jd_editar_alumno;
     private javax.swing.JDialog jd_editar_profesor;
     private javax.swing.JDialog jd_login;
@@ -1849,7 +2002,7 @@ public class Main extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jdc_alum_fecha_nacimiento;
     private com.toedter.calendar.JDateChooser jdc_editar_alum_fecha;
     private com.toedter.calendar.JDateChooser jdc_editar_profesor_fecha;
-    private com.toedter.calendar.JDateChooser jdc_editar_profesor_fecha1;
+    private com.toedter.calendar.JDateChooser jdc_prof_nacimiento;
     private javax.swing.JPanel jp_principal;
     private javax.swing.JTable jt_modulo;
     private javax.swing.JLabel lb_foto;
@@ -1857,13 +2010,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_editar_alum_female;
     private javax.swing.JRadioButton rb_editar_alum_male;
     private javax.swing.JRadioButton rb_editar_profesor_female;
-    private javax.swing.JRadioButton rb_editar_profesor_female1;
     private javax.swing.JRadioButton rb_editar_profesor_male;
-    private javax.swing.JRadioButton rb_editar_profesor_male1;
+    private javax.swing.JRadioButton rb_prof_female;
+    private javax.swing.JRadioButton rb_prof_male;
     private javax.swing.JSpinner sp_editar_profesor_sueldo;
-    private javax.swing.JSpinner sp_editar_profesor_sueldo1;
     private javax.swing.JSpinner sp_editar_profesor_xp;
-    private javax.swing.JSpinner sp_editar_profesor_xp1;
+    private javax.swing.JSpinner sp_prof_sueldo;
+    private javax.swing.JSpinner sp_prof_xp;
     private javax.swing.JTextField tf_alum_apellido;
     private javax.swing.JRadioButton tf_alum_female;
     private javax.swing.JTextField tf_alum_nombre;
@@ -1872,13 +2025,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_editar_alum_nombre;
     private javax.swing.JTextField tf_editar_alum_telefono;
     private javax.swing.JTextField tf_editar_profesor_apellido;
-    private javax.swing.JTextField tf_editar_profesor_apellido1;
     private javax.swing.JTextField tf_editar_profesor_nombre;
-    private javax.swing.JTextField tf_editar_profesor_nombre1;
     private javax.swing.JTextField tf_editar_profesor_telefono;
-    private javax.swing.JTextField tf_editar_profesor_telefono1;
     private javax.swing.JPasswordField tf_login_password;
     private javax.swing.JTextField tf_login_username;
+    private javax.swing.JTextField tf_prof_apellido;
+    private javax.swing.JTextField tf_prof_apellido1;
+    private javax.swing.JTextField tf_prof_apellido2;
+    private javax.swing.JTextField tf_prof_nombre;
+    private javax.swing.JTextField tf_prof_nombre1;
+    private javax.swing.JTextField tf_prof_nombre2;
+    private javax.swing.JTextField tf_prof_telefono;
     // End of variables declaration//GEN-END:variables
 //int Height = 0, Width = 0;
     ArrayList<Profesor> profes = new ArrayList();

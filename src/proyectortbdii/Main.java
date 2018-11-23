@@ -40,6 +40,8 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         //this.setUndecorated(true);
+        Redis x = new Redis();
+        x.initArrays();
         this.setResizable(false);
         initComponents();
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -190,6 +192,8 @@ public class Main extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         cb_modulo = new javax.swing.JComboBox<>();
+        b_teorica = new javax.swing.JButton();
+        b_practica = new javax.swing.JButton();
         JD_agregarPago = new javax.swing.JDialog();
         L_pago = new javax.swing.JLabel();
         L_agregarPago_idAlumno = new javax.swing.JLabel();
@@ -205,16 +209,31 @@ public class Main extends javax.swing.JFrame {
         B_agregarPago = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        d_teorica = new javax.swing.JDialog();
+        l_teorica = new javax.swing.JLabel();
+        l_teorica_idAlumno = new javax.swing.JLabel();
+        tf_teorica_idAlumno = new javax.swing.JTextField();
+        l_teorica_idProfesor = new javax.swing.JLabel();
+        cb_teorica_idProfesor = new javax.swing.JComboBox<>();
+        b_agregarTeorica = new javax.swing.JButton();
+        d_practica = new javax.swing.JDialog();
+        l_practica = new javax.swing.JLabel();
+        l_practica_idAlumno = new javax.swing.JLabel();
+        tf_practica_idAlumno = new javax.swing.JTextField();
+        l_practica_idProfesor = new javax.swing.JLabel();
+        cb_practica_idProfesor = new javax.swing.JComboBox<>();
+        l_practica_idVehiculo = new javax.swing.JLabel();
+        cb_practica_idVehiculo = new javax.swing.JComboBox<>();
+        b_agregarPractica = new javax.swing.JButton();
         jp_principal = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        MI_agregarVehiculo = new javax.swing.JMenuItem();
-        MI_agregarClase = new javax.swing.JMenuItem();
-        MI_agregarPago = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mb_menuPrincipal = new javax.swing.JMenuBar();
+        m_menu = new javax.swing.JMenu();
+        mi_agregarProfesor = new javax.swing.JMenuItem();
+        mi_agregarAlumno = new javax.swing.JMenuItem();
+        mi_agregarVehiculo = new javax.swing.JMenuItem();
+        mi_agregarPago = new javax.swing.JMenuItem();
+        mi_modulo = new javax.swing.JMenuItem();
+        mi_salir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         jd_login.setTitle("Login");
@@ -985,24 +1004,43 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        b_teorica.setText("Clase Teórica");
+        b_teorica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_teoricaActionPerformed(evt);
+            }
+        });
+
+        b_practica.setText("Clase Práctica");
+        b_practica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_practicaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_moduloLayout = new javax.swing.GroupLayout(jd_modulo.getContentPane());
         jd_modulo.getContentPane().setLayout(jd_moduloLayout);
         jd_moduloLayout.setHorizontalGroup(
             jd_moduloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_moduloLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jd_moduloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
                     .addGroup(jd_moduloLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE))
-                    .addGroup(jd_moduloLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)
-                        .addGap(103, 103, 103)
+                        .addGroup(jd_moduloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jd_moduloLayout.createSequentialGroup()
+                                .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(b_teorica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jd_moduloLayout.createSequentialGroup()
+                                .addGap(210, 210, 210)
+                                .addComponent(b_practica)))
+                        .addGap(74, 74, 74)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(cb_modulo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(cb_modulo, 0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jd_moduloLayout.setVerticalGroup(
@@ -1010,13 +1048,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_moduloLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(jd_moduloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(cb_modulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                .addGroup(jd_moduloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_moduloLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jd_moduloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(jButton4)
+                            .addComponent(jButton5)
+                            .addComponent(cb_modulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(jd_moduloLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(b_teorica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_practica)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         L_pago.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -1094,6 +1140,127 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
+        d_teorica.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        l_teorica.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        l_teorica.setText("Clase Teórica");
+
+        l_teorica_idAlumno.setText("ID del Alumno");
+
+        tf_teorica_idAlumno.setEditable(false);
+
+        l_teorica_idProfesor.setText("ID del Profesor");
+
+        b_agregarTeorica.setText("Agregar");
+        b_agregarTeorica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_agregarTeoricaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout d_teoricaLayout = new javax.swing.GroupLayout(d_teorica.getContentPane());
+        d_teorica.getContentPane().setLayout(d_teoricaLayout);
+        d_teoricaLayout.setHorizontalGroup(
+            d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_teoricaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(l_teorica)
+                    .addGroup(d_teoricaLayout.createSequentialGroup()
+                        .addGroup(d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(l_teorica_idProfesor)
+                            .addComponent(l_teorica_idAlumno))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_teorica_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_teorica_idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(b_agregarTeorica))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        d_teoricaLayout.setVerticalGroup(
+            d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_teoricaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_teorica)
+                .addGap(18, 18, 18)
+                .addGroup(d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(l_teorica_idAlumno)
+                    .addComponent(tf_teorica_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(d_teoricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(l_teorica_idProfesor)
+                    .addComponent(cb_teorica_idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(b_agregarTeorica)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        l_practica.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        l_practica.setText("Clase Práctica");
+
+        l_practica_idAlumno.setText("ID del Alumno");
+
+        tf_practica_idAlumno.setEditable(false);
+
+        l_practica_idProfesor.setText("ID del Profesor");
+
+        l_practica_idVehiculo.setText("Vehículo Asignado");
+
+        b_agregarPractica.setText("Agregar");
+        b_agregarPractica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_agregarPracticaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout d_practicaLayout = new javax.swing.GroupLayout(d_practica.getContentPane());
+        d_practica.getContentPane().setLayout(d_practicaLayout);
+        d_practicaLayout.setHorizontalGroup(
+            d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(d_practicaLayout.createSequentialGroup()
+                .addGroup(d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(d_practicaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(l_practica_idAlumno)
+                            .addComponent(l_practica_idProfesor)
+                            .addComponent(l_practica_idVehiculo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_practica_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_practica_idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_practica_idVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(d_practicaLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(l_practica))
+                    .addGroup(d_practicaLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(b_agregarPractica)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        d_practicaLayout.setVerticalGroup(
+            d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, d_practicaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(d_practicaLayout.createSequentialGroup()
+                        .addComponent(l_practica)
+                        .addGap(18, 18, 18)
+                        .addComponent(l_practica_idAlumno))
+                    .addComponent(tf_practica_idAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(l_practica_idProfesor)
+                    .addComponent(cb_practica_idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(d_practicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(l_practica_idVehiculo)
+                    .addComponent(cb_practica_idVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(b_agregarPractica)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autoescuela");
 
@@ -1108,71 +1275,64 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 274, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Menu");
+        m_menu.setText("Menu");
 
-        jMenuItem3.setText("Agregar Profesor");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        mi_agregarProfesor.setText("Agregar Profesor");
+        mi_agregarProfesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                mi_agregarProfesorActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        m_menu.add(mi_agregarProfesor);
 
-        jMenuItem5.setText("Agregar Alumno");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        mi_agregarAlumno.setText("Agregar Alumno");
+        mi_agregarAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                mi_agregarAlumnoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        m_menu.add(mi_agregarAlumno);
 
-        MI_agregarVehiculo.setText("Agregar Vehículo");
-        MI_agregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+        mi_agregarVehiculo.setText("Agregar Vehículo");
+        mi_agregarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MI_agregarVehiculoActionPerformed(evt);
+                mi_agregarVehiculoActionPerformed(evt);
             }
         });
-        jMenu1.add(MI_agregarVehiculo);
+        m_menu.add(mi_agregarVehiculo);
 
-        MI_agregarClase.setText("Agregar Clase");
-        MI_agregarClase.addActionListener(new java.awt.event.ActionListener() {
+        mi_agregarPago.setText("Agregar Pago");
+        mi_agregarPago.setEnabled(false);
+        mi_agregarPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MI_agregarClaseActionPerformed(evt);
+                mi_agregarPagoActionPerformed(evt);
             }
         });
-        jMenu1.add(MI_agregarClase);
+        m_menu.add(mi_agregarPago);
 
-        MI_agregarPago.setText("Agregar Pago");
-        MI_agregarPago.addActionListener(new java.awt.event.ActionListener() {
+        mi_modulo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        mi_modulo.setText("Módulo");
+        mi_modulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MI_agregarPagoActionPerformed(evt);
+                mi_moduloActionPerformed(evt);
             }
         });
-        jMenu1.add(MI_agregarPago);
+        m_menu.add(mi_modulo);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Modulo");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mi_salir.setText("Salir");
+        mi_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mi_salirActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        m_menu.add(mi_salir);
 
-        jMenuItem2.setText("Salir");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        jMenuBar1.add(jMenu1);
+        mb_menuPrincipal.add(m_menu);
 
         jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        mb_menuPrincipal.add(jMenu2);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(mb_menuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1202,7 +1362,7 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mi_moduloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_moduloActionPerformed
         DefaultTableModel model = (DefaultTableModel) jt_modulo.getModel();
         model.setRowCount(0);
         jd_modulo.setModal(true);//Bloquear otras ventanas
@@ -1210,27 +1370,27 @@ public class Main extends javax.swing.JFrame {
         jd_modulo.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
         jd_modulo.setResizable(false);//No se puede modificar el tamaño
         jd_modulo.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_mi_moduloActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mi_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_salirActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mi_salirActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void mi_agregarProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_agregarProfesorActionPerformed
         jd_agregar_profesor.setModal(true);//Bloquear otras ventanas
         jd_agregar_profesor.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
         jd_agregar_profesor.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
         jd_agregar_profesor.setResizable(false);//No se puede modificar el tamaño
         jd_agregar_profesor.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_mi_agregarProfesorActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void mi_agregarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_agregarAlumnoActionPerformed
         jd_agregar_alumno.setModal(true);//Bloquear otras ventanas
         jd_agregar_alumno.pack();//Acoplar el tamaño a la ventana a los elementos que incluye
         jd_agregar_alumno.setLocationRelativeTo(this);//Ubicar la ventana en una posicion
         jd_agregar_alumno.setResizable(false);//No se puede modificar el tamaño
         jd_agregar_alumno.setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_mi_agregarAlumnoActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         System.out.println(profes.size());
@@ -1592,29 +1752,21 @@ public class Main extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    private void MI_agregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarVehiculoActionPerformed
+    private void mi_agregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_agregarVehiculoActionPerformed
         JD_agregarVehiculo.setModal(true);
         JD_agregarVehiculo.pack();
         JD_agregarVehiculo.setLocationRelativeTo(this);
         JD_agregarVehiculo.setResizable(false);
         JD_agregarVehiculo.setVisible(true);
-    }//GEN-LAST:event_MI_agregarVehiculoActionPerformed
+    }//GEN-LAST:event_mi_agregarVehiculoActionPerformed
 
-    private void MI_agregarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarClaseActionPerformed
-        JD_agregarClase.setModal(true);
-        JD_agregarClase.pack();
-        JD_agregarClase.setLocationRelativeTo(this);
-        JD_agregarClase.setResizable(false);
-        JD_agregarClase.setVisible(true);
-    }//GEN-LAST:event_MI_agregarClaseActionPerformed
-
-    private void MI_agregarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_agregarPagoActionPerformed
+    private void mi_agregarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_agregarPagoActionPerformed
         JD_agregarPago.setModal(true);
         JD_agregarPago.pack();
         JD_agregarPago.setLocationRelativeTo(this);
         JD_agregarPago.setResizable(false);
         JD_agregarPago.setVisible(true);
-    }//GEN-LAST:event_MI_agregarPagoActionPerformed
+    }//GEN-LAST:event_mi_agregarPagoActionPerformed
 
     private void B_agregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_agregarVehiculoActionPerformed
         try {
@@ -1822,6 +1974,76 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton23ActionPerformed
 
+    private void b_teoricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_teoricaActionPerformed
+        // Muestra el ID del alumno que quiere llevar la clase.
+        tf_teorica_idAlumno.setText(alumni.get(jt_modulo.getSelectedRow()).getId());
+        // Carga el ID de todos los profesores en un combo box.
+        for (int i = 0; i < profes.size(); i++) {
+            cb_teorica_idProfesor.addItem(profes.get(i).getId());
+        }
+        d_teorica.setModal(true);
+        d_teorica.pack();
+        d_teorica.setLocationRelativeTo(this);
+        d_teorica.setResizable(false);
+        d_teorica.setVisible(true);
+    }//GEN-LAST:event_b_teoricaActionPerformed
+
+    private void b_practicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_practicaActionPerformed
+        // Muestra el ID del alumno que quiere llevar la clase.
+        tf_practica_idAlumno.setText(alumni.get(jt_modulo.getSelectedRow()).getId());
+        // Carga el ID de todos los profesores válidos en un combo box.
+        Redis r = new Redis();
+        r.initArrays();
+        ArrayList<String> profesoresValidos = r.getProfesorCategoria(alumni.get(jt_modulo.getSelectedRow()).getId());
+        for (int i = 0; i < profesoresValidos.size(); i++) {
+            cb_practica_idProfesor.addItem(profesoresValidos.get(i));
+        }
+        // Carga el ID de todos los vehículos válidos en un combo box.
+        ArrayList<String> vehiculosValidos = r.getTipoVehiculo(alumni.get(jt_modulo.getSelectedRow()).getId());
+        for (int i = 0; i < vehiculosValidos.size(); i++) {
+            cb_practica_idVehiculo.addItem(vehiculosValidos.get(i));
+        }
+        d_practica.setModal(true);
+        d_practica.pack();
+        d_practica.setLocationRelativeTo(this);
+        d_practica.setResizable(false);
+        d_practica.setVisible(true);
+    }//GEN-LAST:event_b_practicaActionPerformed
+
+    private void b_agregarTeoricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_agregarTeoricaActionPerformed
+        try {
+            Redis r = new Redis();            
+            // Insertar en Redis
+            r.updateClaseTeorica(tf_teorica_idAlumno.getText(), cb_teorica_idProfesor.getSelectedItem().toString());
+            // Cerrar ventana
+            d_teorica.dispose();
+            JOptionPane.showMessageDialog(this, "La clase teórica se agregó correctamente.\n");
+            d_teorica.dispose();
+            // Limpiar campos
+            tf_teorica_idAlumno.setText("");
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this, "No se pudo agregar la clase teórica.");
+        }
+    }//GEN-LAST:event_b_agregarTeoricaActionPerformed
+
+    private void b_agregarPracticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_agregarPracticaActionPerformed
+        try {
+            Redis r = new Redis();            
+            // Insertar en Redis
+            r.updateClasePractica(tf_practica_idAlumno.getText(), cb_practica_idProfesor.getSelectedItem().toString(),
+                    cb_practica_idVehiculo.getSelectedItem().toString());
+            // Cerrar ventana            
+            JOptionPane.showMessageDialog(this, "La clase práctica se agregó correctamente.\n");
+            d_practica.dispose();
+            // Limpiar campos
+            tf_practica_idAlumno.setText("");
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this, "No se pudo agregar la clase práctica.");
+        }
+    }//GEN-LAST:event_b_agregarPracticaActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1898,9 +2120,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel L_tipoVehiculo1;
     private javax.swing.JLabel L_vehiculo;
     private javax.swing.JLabel L_vehiculo1;
-    private javax.swing.JMenuItem MI_agregarClase;
-    private javax.swing.JMenuItem MI_agregarPago;
-    private javax.swing.JMenuItem MI_agregarVehiculo;
     private javax.swing.JTextField TF_agregarPago_idAlumno;
     private javax.swing.JTextField TF_consumo;
     private javax.swing.JTextField TF_consumo_editar;
@@ -1918,16 +2137,23 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField TF_tamano_editar;
     private javax.swing.JTextField TF_tarifa;
     private javax.swing.JTextField TF_tarifa_editar;
+    private javax.swing.JButton b_agregarPractica;
+    private javax.swing.JButton b_agregarTeorica;
+    private javax.swing.JButton b_practica;
+    private javax.swing.JButton b_teorica;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cb_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_alum_tipo_licencia;
     private javax.swing.JComboBox<String> cb_editar_profesor_categoria;
     private javax.swing.JComboBox<String> cb_modulo;
+    private javax.swing.JComboBox<String> cb_practica_idProfesor;
+    private javax.swing.JComboBox<String> cb_practica_idVehiculo;
     private javax.swing.JComboBox<String> cb_prof_categoria;
-    private javax.swing.JButton jButton19;
+    private javax.swing.JComboBox<String> cb_teorica_idProfesor;
+    private javax.swing.JDialog d_practica;
+    private javax.swing.JDialog d_teorica;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton25;
@@ -1938,17 +2164,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1963,7 +2180,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
@@ -1978,18 +2194,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JDialog jd_agregar_alumno;
     private javax.swing.JDialog jd_agregar_profesor;
-    private javax.swing.JDialog jd_agregar_profesor1;
-    private javax.swing.JDialog jd_agregar_profesor2;
     private javax.swing.JDialog jd_editar_alumno;
     private javax.swing.JDialog jd_editar_profesor;
     private javax.swing.JDialog jd_login;
@@ -2000,7 +2208,22 @@ public class Main extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jdc_prof_nacimiento;
     private javax.swing.JPanel jp_principal;
     private javax.swing.JTable jt_modulo;
+    private javax.swing.JLabel l_practica;
+    private javax.swing.JLabel l_practica_idAlumno;
+    private javax.swing.JLabel l_practica_idProfesor;
+    private javax.swing.JLabel l_practica_idVehiculo;
+    private javax.swing.JLabel l_teorica;
+    private javax.swing.JLabel l_teorica_idAlumno;
+    private javax.swing.JLabel l_teorica_idProfesor;
     private javax.swing.JLabel lb_foto;
+    private javax.swing.JMenu m_menu;
+    private javax.swing.JMenuBar mb_menuPrincipal;
+    private javax.swing.JMenuItem mi_agregarAlumno;
+    private javax.swing.JMenuItem mi_agregarPago;
+    private javax.swing.JMenuItem mi_agregarProfesor;
+    private javax.swing.JMenuItem mi_agregarVehiculo;
+    private javax.swing.JMenuItem mi_modulo;
+    private javax.swing.JMenuItem mi_salir;
     private javax.swing.JRadioButton rb_alum_male;
     private javax.swing.JRadioButton rb_editar_alum_female;
     private javax.swing.JRadioButton rb_editar_alum_male;
@@ -2024,13 +2247,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_editar_profesor_telefono;
     private javax.swing.JPasswordField tf_login_password;
     private javax.swing.JTextField tf_login_username;
-    private javax.swing.JTextField tf_prof_apellido;
-    private javax.swing.JTextField tf_prof_apellido1;
+    private javax.swing.JTextField tf_practica_idAlumno;
     private javax.swing.JTextField tf_prof_apellido2;
-    private javax.swing.JTextField tf_prof_nombre;
-    private javax.swing.JTextField tf_prof_nombre1;
     private javax.swing.JTextField tf_prof_nombre2;
     private javax.swing.JTextField tf_prof_telefono;
+    private javax.swing.JTextField tf_teorica_idAlumno;
     // End of variables declaration//GEN-END:variables
 //int Height = 0, Width = 0;
     ArrayList<Profesor> profes = new ArrayList();

@@ -392,7 +392,16 @@ public class Redis {
 
         jedis.close();
     }
-
+    
+    public void updateClaseTeorica(String id, String id_profesor) {
+        jedis.hset(id, "id_profesor", id_profesor);
+    }
+    
+    public void updateClasePractica(String id, String id_profesor, String id_vehiculo) {
+        jedis.hset(id, "id_profesor", id_profesor);
+        jedis.hset(id, "id_vehiculo", id_vehiculo);
+    }
+    
     public Map<String, String> readObject(String id) {
         Map<String, String> properties = jedis.hgetAll(id);
         jedis.close();

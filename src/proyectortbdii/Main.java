@@ -1333,15 +1333,9 @@ public class Main extends javax.swing.JFrame {
                             } else if (entry.getKey().equals("tipo_licencia")) {
                                 tipo_licencia = entry.getValue();
                                 alum.setTipo_licencia(tipo_licencia);
-                            } else if (entry.getKey().equals("profesor_asignado")) {
-                                profesor_asignado = entry.getValue();
-                                alum.setProfesor_asignado(profesor_asignado);
-                            } else if (entry.getKey().equals("id_licencia")) {
-                                id_licencia = entry.getValue();
-                                alum.setProfesor_asignado(id_licencia);
                             } else if (entry.getKey().equals("id_clase")) {
                                 id_clase = entry.getValue();
-                                alum.setProfesor_asignado(id_clase);
+                                alum.setId_clase(id_clase);
                             }
                         }
                         alumni.add(alum);
@@ -1354,7 +1348,7 @@ public class Main extends javax.swing.JFrame {
                     ));
                     for (Alumno a : alumni) {
                         Object row[] = {a.getId(), a.getNombre(), a.getApellido(), a.getGenero(), a.getFecha_nacimiento(),
-                            a.getTelefono(), a.getTipo_licencia(), a.getProfesor_asignado(), a.getId_licencia(), a.getId_clase()};
+                            a.getTelefono(), a.getTipo_licencia(), a.getId_licencia(), a.getId_clase()};
                         DefaultTableModel m = (DefaultTableModel) jt_modulo.getModel();
                         m.addRow(row);
                         jt_modulo.setModel(m);
@@ -1646,8 +1640,9 @@ public class Main extends javax.swing.JFrame {
 
     private void B_agregarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_agregarClaseActionPerformed
         try {
-            Redis R = new Redis();
+            /*Redis R = new Redis();
             String uniqueID = UUID.randomUUID().toString();
+            
             Clase_Practica C = new Clase_Practica(uniqueID, TF_idProfesor.getText(),
                     TF_idAlumno.getText(), CB_agregarClase_tipoClase.getItemAt(CB_agregarClase_tipoClase.getSelectedIndex()),
                     TF_examenPractico.getText(), TF_examenTeorico.getText());
@@ -1659,7 +1654,7 @@ public class Main extends javax.swing.JFrame {
             TF_idAlumno.setText(null);
             CB_agregarClase_tipoClase.setSelectedIndex(0);
             TF_examenPractico.setText(null);
-            TF_examenTeorico.setText(null);
+            TF_examenTeorico.setText(null);*/
         } catch (Exception e) {
             JOptionPane.showMessageDialog(JD_agregarClase, "La Clase no se pudo agregar correctamente.");
         }
@@ -1699,7 +1694,7 @@ public class Main extends javax.swing.JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String date = sdf.format(jdc_alum_fecha_nacimiento.getDate());
             Alumno alum = new Alumno(uniqueID, tf_alum_nombre.getText(), tf_alum_apellido.getText(), genero, date, tf_alum_telefono.getText(),
-                    cb_alum_tipo_licencia.getItemAt(cb_alum_tipo_licencia.getSelectedIndex()), "", "", "");
+                    cb_alum_tipo_licencia.getItemAt(cb_alum_tipo_licencia.getSelectedIndex()), "", r.createClase(uniqueID));
             //Insertar en Redis
             r.createAlumno(alum);
             //Cerrar ventana
@@ -1742,7 +1737,7 @@ public class Main extends javax.swing.JFrame {
             String date = sdf.format(jdc_editar_alum_fecha.getDate());
             Alumno alum = new Alumno(uniqueID, tf_editar_alum_nombre.getText(), tf_editar_alum_apellido.getText(),
                     genero, date, tf_editar_alum_telefono.getText(),
-                    cb_editar_alum_tipo_licencia.getItemAt(cb_editar_alum_tipo_licencia.getSelectedIndex()), "", "", "");
+                    cb_editar_alum_tipo_licencia.getItemAt(cb_editar_alum_tipo_licencia.getSelectedIndex()), "", ""); //cargar el idClase y id
             //Insertar en Redis
             r.createAlumno(alum);
             //Cerrar ventana

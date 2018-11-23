@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.exceptions.JedisException;
 
@@ -52,7 +53,47 @@ public class Redis {
     public String getAtributo(String id, String tipo) {
         return jedis.hget(id, tipo);
     }
-
+    
+    public ArrayList<String> getProfesorCategoria(String id_alumno){
+        String tipo_licencia = getAtributo(id_alumno,"tipo_licencia");
+        ArrayList<String> profesores_categoria = new ArrayList();
+        for (int i = 0; i < profesores.size(); i++) {
+            String categoria = getAtributo(profesores.get(i),"categoria");
+            if(tipo_licencia.equals(categoria))
+                profesores_categoria.add(profesores.get(i));
+        }
+        return profesores_categoria;
+    }
+    
+    public ArrayList<String> getTipoVehiculo(String id_alumno){
+        String tipo_licencia = getAtributo(id_alumno,"tipo_licencia");
+        ArrayList<String> tipo_vehiculos = new ArrayList();
+        for (int i = 0; i < vehiculos.size(); i++) {
+            String tipo_vehiculo = getAtributo(vehiculos.get(i),"tipo_licencia");
+            if(tipo_licencia.equals(tipo_vehiculo) && getAtributo(vehiculos.get(i),"id_profesor").equals(""))
+                tipo_vehiculos.add(vehiculos.get(i));
+        }
+        return tipo_vehiculos;
+    }
+    
+    public String createClase(String id_alumno){
+        String uniqueID = UUID.randomUUID().toString(),uniqueID2 = UUID.randomUUID().toString(), uniqueID3 = UUID.randomUUID().toString();
+        Clase clase = new Clase(uniqueID, uniqueID2, uniqueID3);
+        createClase(clase);
+        createClaseTeorica(uniqueID2, id_alumno);
+        createClasePractica(uniqueID3, id_alumno);
+        return uniqueID;
+    }
+    
+    public void createClaseTeorica(String id, String id_alumno){
+        Clase_Teorica ct = new Clase_Teorica(id, "", id_alumno, "0");
+        createClaseTeorica(ct);
+    }
+    
+    public void createClasePractica(String id, String id_alumno){
+        Clase_Practica cp = new Clase_Practica(id, "", id_alumno, "", "0");
+        createClasePractica(cp);
+    }
     //retorna el auto disponible y de una vez asigna el id del profesor que solicita al auto (relacion uno a uno)
     /*public String getIdVehiculoDisponible(String id_profesor) {
         ArrayList<String> keys = new ArrayList();
